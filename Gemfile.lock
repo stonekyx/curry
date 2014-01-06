@@ -115,9 +115,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.4.0)
+    uglifier (1.2.4)
       execjs (>= 0.3.0)
-      json (>= 1.8.0)
+      json (>= 1.0.2)
     underscore-rails (1.5.2)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)

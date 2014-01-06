@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+if (window.jsLoaded) {
+  window.jsLoaded.application = true;
+  window.jsLoaded.applicationLoadedTime = new Date();
+}

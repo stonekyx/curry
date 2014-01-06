@@ -9,16 +9,20 @@ Curry::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  # config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  config.assets.js_compressor = Uglifier.new(:beautify => true, :beautify_options => {:indent_level => 0}) if defined? Uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  config.assets.prefix = "/kiddi"
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH

@@ -37,4 +37,6 @@ Curry::Application.configure do
     # Default: config.assets.debug = false
     config.assets.debug = true
   end
+
+  config.assets.prefix = "/kiddy"
 end
