@@ -130,7 +130,7 @@ PLATFORMS
 DEPENDENCIES
   backbone-rails
   backbone-support
-  bootstrap-sass
+  bootstrap-sass (~> 3.0.3.0)
   compass-rails (~> 1.0.0.rc.2)
   htmlcompressor
   jquery-rails
