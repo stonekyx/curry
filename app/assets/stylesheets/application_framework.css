@@ -1,0 +1,7 @@
+/*
+ * This is a manifest file that'll be compiled into application_framework.css, which will include all the files
+ * listed below.
+ * It should include the framework/library stylesheets files which are not supposed to change frequently
+ *
+ *= require _bootstrap
+*/

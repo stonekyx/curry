@@ -36,8 +36,7 @@ GEM
     backbone-rails (1.0.0.1)
       rails (>= 3.0.0)
     backbone-support (0.4.0)
-    bootstrap-sass (3.0.3.0)
-      sass (~> 3.2)
+    bootstrap-sass (2.0.3.1)
     builder (3.0.4)
     chunky_png (1.2.9)
     compass (0.12.2)
@@ -51,6 +50,11 @@ GEM
     eventmachine (1.0.3)
     execjs (2.0.2)
     fssm (0.2.10)
+    handlebars_assets (0.15)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hike (1.2.3)
     htmlcompressor (0.0.7)
       yui-compressor (~> 0.9.6)
@@ -130,8 +134,9 @@ PLATFORMS
 DEPENDENCIES
   backbone-rails
   backbone-support
-  bootstrap-sass (~> 3.0.3.0)
+  bootstrap-sass (~> 2.0.3.1)
   compass-rails (~> 1.0.0.rc.2)
+  handlebars_assets
   htmlcompressor
   jquery-rails
   json
