@@ -44,9 +44,7 @@ module Curry
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
 
-    config.assets.precompile += ["application_framework.css"]
     config.assets.precompile += ["application.css"]
-
     config.assets.precompile += ["application_framework.js"]
     config.assets.precompile += ["application.js"]
 

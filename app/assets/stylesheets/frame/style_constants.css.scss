@@ -1,0 +1,65 @@
+/*
+ * Please try to put all css public constants here.
+ */
+
+/******************* fonts *******************/
+/* size */
+$large-font-size : 26px;
+$medium-font-size: 15px;
+$small-font-size : 12px;
+
+
+/* weights */
+$medium-weight: 500;
+$light-weight : 200;
+
+/******************* colors *******************/
+/* color collections */
+$white:   #FFFFFF;
+$grey-fa: #FAFAFA;
+$grey-f2: #F2F2F2;
+$grey-f1: #F1F1F1;
+$grey-d:  #DDDDDD;
+$grey-c:  #CCCCCC;
+$grey-c6: #C6C6C6;
+$grey-a:  #AAAAAA;
+$grey-9:  #999999;
+$grey-8:  #888888;
+$grey-7:  #777777;
+$grey-6:  #666666;
+$grey-5:  #555555;
+$grey-4:  #444444;
+$grey-3:  #333333;
+$black:   #000000;
+$grey-b:  #BBBBBB;
+$grey-d6: #D6D6D6;
+
+/* promotion & error colors */
+$dark-red:  #CC0000;
+$red-error: #B8010F;
+
+/* text and links */
+$text-color: #444444;
+$link-color: #444444;
+$link-hover-color: #66AA33;
+$link-blue:  #3377BB;
+
+/* Hulu greens */
+$hulu-green-light: #99CC33;
+$hulu-green-dark:  #66AA33;
+$hulu-green-grad:  #77BB33;
+
+/* background */
+$body-background:    $grey-d;
+$header-background:  #E1E1E1;
+$content-background: $grey-f1;
+
+/* drop down hover backgrounds */
+$dropdown-dark: #559922;
+$dropdown-light: $hulu-green-dark;
+
+/******************* sizes *******************/
+/* page width */
+$page-max-width:    1200px;
+$page-border-width: 8px;
+

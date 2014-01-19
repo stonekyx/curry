@@ -10,6 +10,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
+# Ignore sprite maps
+/app/assets/0sprites
+
 # Ignore /public/assets
 /public/kidd*
 

@@ -1,0 +1,52 @@
+/*
+    z-index layers (from high to low)
+ +--------------------------------------------------+
+ |  1st level -- main elements                      |
+ +--------------------------------------------------+
+ |  layer 6 : hover                                 |
+ |  layer 5 : popup      (e.g. login form)          |
+ |  layer 4 : overlay    (e.g. dropdown)            |
+ |  layer 3 : header & footer                       |
+ |  layer 2 : content                               |
+ |  layer 1 : background                            |
+ +--------------------------------------------------+
+
+*/
+
+@mixin z-index-layer-6 {
+  z-index: 4000;
+}
+@mixin z-index-layer-5 {
+  z-index: 3000;
+}
+@mixin z-index-layer-4 {
+  z-index: 2000;
+}
+@mixin z-index-layer-3 {
+  z-index: 1000;
+}
+@mixin z-index-layer-2 {
+  z-index: 0;
+}
+@mixin z-index-layer-1 {
+  z-index: -1;
+}
+
+.z-index-layer-6 {
+  @include z-index-layer-6;
+}
+.z-index-layer-5 {
+  @include z-index-layer-5;
+}
+.z-index-layer-4 {
+  @include z-index-layer-4;
+}
+.z-index-layer-3 {
+  @include z-index-layer-3;
+}
+.z-index-layer-2 {
+  @include z-index-layer-2;
+}
+.z-index-layer-1 {
+  @include z-index-layer-1;
+}

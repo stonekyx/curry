@@ -11,6 +11,7 @@ group :assets do
   gem 'sass-rails',     '~> 3.2.3'
   gem 'bootstrap-sass', '~> 2.0.3.1'
   gem 'compass-rails',  '~> 1.0.0.rc.2'
+  gem 'sprockets-media_query_combiner'
   gem 'handlebars_assets'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
