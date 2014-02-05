@@ -14,9 +14,9 @@
     <div id='page-right-shadow' class='z-index-layer-1'></div>
     <div id='page-background'   class='z-index-layer-1'></div>
     <div id='inner-wrap'        class='z-index-layer-2'>
-      <div id='header-wrap' ><%= render 'shared/header' %></div>
+      <div id='header-wrap' ><%= render :partial => 'shared/header' %></div>
       <div id='content-wrap'><%= yield %></div>
-      <div id='footer-wrap' ><%= render 'shared/footer' %></div>
+      <div id='footer-wrap' ><%= render :partial => 'shared/footer' %></div>
     </div>
   </div>
 </body>
