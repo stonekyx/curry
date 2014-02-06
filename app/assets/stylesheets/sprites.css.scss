@@ -1,3 +1,8 @@
+$repeat-x-sprite-dimensions: true;
+$repeat-x-layout: vertical;
+$repeat-x-spacing: 2px;
+@import "common/repeat-x/*.png"; /* repeat-x */
+
 $repeat-y-sprite-dimensions: true;
 $repeat-y-layout: horizontal;
 $repeat-y-spacing: 2px;
