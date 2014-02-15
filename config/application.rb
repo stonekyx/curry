@@ -45,6 +45,7 @@ module Curry
     # config.active_record.schema_format = :sql
 
     config.assets.precompile += ["application.css"]
+    config.assets.precompile += ["application_core.js"]
     config.assets.precompile += ["application_framework.js"]
     config.assets.precompile += ["application.js"]
 

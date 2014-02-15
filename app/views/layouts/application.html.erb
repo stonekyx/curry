@@ -4,9 +4,20 @@
   <title>Curry</title>
   <link rel='shortcut icon' href='/favicon.ico' />
   <%= stylesheet_link_tag    'application', :media => 'all' %>
+  <%= javascript_include_tag 'application_core' %>
   <%= javascript_include_tag 'application_framework' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script type='text/javascript'>
+  <%# wrap with jquery %>
+  (function($) {
+    $(document).ready(function() {
+      var loaded = (window.jsloaded && window.jsloaded.applicationCore && window.jsloaded.applicationFrameWork && window.jsloaded.application && window.JST);
+      Curry.init();
+      Curry.run();
+    });
+  })(jQuery);
+  </script>
 </head>
 <body>
   <div id='wrap'>

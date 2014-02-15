@@ -10,9 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require_tree ./templates
+//= require ./views/base_view
+//= require ./routers/route_controller
+//= require ./routers/base_controller
+//= require_tree ./models
 //= require_tree ./views
+//= require_tree ./routers
 
-if (window.jsLoaded) {
-  window.jsLoaded.application = true;
-  window.jsLoaded.applicationLoadedTime = new Date();
+if (window.jsloaded) {
+  window.jsloaded.application = true;
+  window.jsloaded.applicationLoadedTime = new Date();
 }
