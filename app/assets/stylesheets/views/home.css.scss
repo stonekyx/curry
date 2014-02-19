@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#content-container {
-  .here {
-    float: right;
+#home-container {
+  .game-section {
+    text-align: center;
+    .map {
+      background: $game-background;
+    }
   }
 }

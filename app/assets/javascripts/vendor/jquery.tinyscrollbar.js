@@ -61,8 +61,6 @@
         ,   iPosition   = { start: 0, now: 0 }
         ,   iMouse      = {}
         ,   touchEvents = 'ontouchstart' in document.documentElement
-            // Added by boyan(Hulu), bind mouse event for Win8, even if it has touchEvents
-        ,   bindMouse   = !touchEvents || (navigator && navigator.userAgent && navigator.userAgent.indexOf('Windows NT 6.2') > 0)
         ;
 
         function initialize()

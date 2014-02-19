@@ -8,7 +8,7 @@
     renderInternal: function() {
       //TODO: zanwen, should render different templates according to users' identity.
       if (true) {
-        $(this.el).find('#main').html(this.renderTemplate('home/game'));
+        $(this.el).find('#home-container').html(this.renderTemplate('home/game'));
       }
     }
   });

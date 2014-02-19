@@ -44,19 +44,14 @@ $link-color: #444444;
 $link-hover-color: #66AA33;
 $link-blue:  #3377BB;
 
-/* Hulu greens */
-$hulu-green-light: #99CC33;
-$hulu-green-dark:  #66AA33;
-$hulu-green-grad:  #77BB33;
-
 /* background */
 $body-background:    $grey-d;
-$header-background:  #E1E1E1;
 $content-background: $grey-f1;
+$game-background:    $grey-4;
 
 /* drop down hover backgrounds */
-$dropdown-dark: #559922;
-$dropdown-light: $hulu-green-dark;
+$dropdown-dark:  #559922;
+$dropdown-light: #99CC33;
 
 /******************* sizes *******************/
 /* page width */
@@ -66,3 +61,6 @@ $page-border-width: 8px;
 /* page container padding */
 $page-container-vertical-padding:   20px;
 $page-container-horizontal-padding: 10px;
+
+/******************* borders *******************/
+$border-radius: 7px;

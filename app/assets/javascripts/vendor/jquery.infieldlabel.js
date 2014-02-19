@@ -145,13 +145,6 @@
       // Find the referenced input or textarea element
       field = document.getElementById(for_attr);
 
-      // Add by boyan@hulu
-      if (!field) {
-        try {
-          field = $(this).parent().find('#' + for_attr)[0];
-        } catch(e) {}
-      }
-
       if (!field) {
         return;
       }

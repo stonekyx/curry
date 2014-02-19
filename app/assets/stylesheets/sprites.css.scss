@@ -7,3 +7,8 @@ $repeat-y-sprite-dimensions: true;
 $repeat-y-layout: horizontal;
 $repeat-y-spacing: 2px;
 @import "common/repeat-y/*.png"; /* repeat-y */
+
+$game-sprite-dimensions: false;
+$game-layout: smart;
+$game-spacing: 2px;
+@import "game/*.png"; /* game */

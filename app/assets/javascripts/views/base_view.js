@@ -30,7 +30,7 @@
       if (Curry.Utils.isBlank(this._template) || Curry.Utils.isBlank(this._context)) {
         //TODO: zanwen, should throw exceptions here.
       }
-      $(this.el).addClass(this._context);
+      $(this.el).attr('id', 'main');
       $(this.el).html(this.renderTemplate(this._template));
     },
 

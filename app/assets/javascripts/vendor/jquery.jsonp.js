@@ -48,7 +48,6 @@
 
             // Attach error handlers according to options.error
             script.onerror = function() {
-              Hulu.Utils.warn('jsonp error');
               var jsonpXHRs = jqXHRs[id];
               cleanup();
               for (var i = jsonpXHRs.length - 1; i >= 0; --i) {
