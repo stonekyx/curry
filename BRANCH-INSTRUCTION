@@ -1,0 +1,18 @@
+In this file, I will clarify the workflow for this branch. Only for spared-develop branch now.
+
+'spared-develop' is a branch for tinier changes comparing to a commit on 'develop' branch.
+
+Overall WorkFlow For 'spared-develop':
+
+  Subject Template:
+
+    Part 1:
+      No.x for Base-Commit SHA.  like No.1 for 224e054d(first eight bits are enough)
+
+    Part 2:
+      Type & Subject             like Code-Change & Let player in home page game walk
+        Type Contains:
+          Base-Commit,  it clarifies the goal of the whole commit.
+          Code-Change,  it adds function for Base-Commit.
+          Code-Review,  it adds comments start with 'COMMENT: blablabla' for Last-Change.
+          Final-Commit, it is the final version for Base-Commit, and it will be cherry-picked to 'develop' branch.

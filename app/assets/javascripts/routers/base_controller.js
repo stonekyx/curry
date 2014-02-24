@@ -11,7 +11,7 @@
     /* Local Variables */
 
     // The name will be used as a key to store controller history state.
-    name: null,
+    name: 'baseController',
 
     // The swapping router of the controller
     router: null,

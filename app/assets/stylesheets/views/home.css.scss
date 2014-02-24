@@ -7,6 +7,22 @@
     text-align: center;
     .map {
       background: $game-background;
+      display: inline-block;
+      width:  960px;
+      height: 260px;
+      padding: 20px;
+      .figure-up {
+        @include game-sprite('figure-up');
+      }
+      .figure-right {
+        @include game-sprite('figure-right');
+      }
+      .figure-down {
+        @include game-sprite('figure-down');
+      }
+      .figure-left {
+        @include game-sprite('figure-left');
+      }
     }
   }
 }

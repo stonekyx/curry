@@ -14,7 +14,6 @@
 //= require ./views/base_view
 //= require ./routers/route_controller
 //= require ./routers/base_controller
-//= require_tree ./models
 //= require_tree ./views
 //= require_tree ./routers
 

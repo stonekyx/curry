@@ -4,9 +4,11 @@
 
 //= require curry_app
 //= require_tree ./defines
-//= require_tree ./lib
 //= require utils/utils
 //= require_tree ./utils
+//= require_tree ./lib
+//= require models/base
+//= require_tree ./models
 
 if (window.jsloaded) {
   window.jsloaded.applicationFrameWork = true;

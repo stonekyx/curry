@@ -16,7 +16,7 @@
     /* Local Variables */
 
     // The name will be used as a key to store controller history state.
-    name: null,
+    name: 'routeController',
 
     pageModels:  null,
     pageView:    null,

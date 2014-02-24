@@ -13,6 +13,7 @@
 //= require vendor/jquery.base64.js
 //= require vendor/jquery.client.js
 //= require vendor/jquery.get_attributes.js
+//= require vendor/jquery-ui-1.10.3.custom.js
 //= require vendor/jquery.json.js
 //= require vendor/jquery.jsonp.js
 //= require vendor/jquery.resize.js

@@ -6,7 +6,7 @@
     /* Local Variables */
 
     // The name will be used as a key to store page location.
-    name: null,
+    name: 'baseView',
 
     // The events will be used in a specific page.
     events: {},
@@ -32,6 +32,7 @@
       }
       $(this.el).attr('id', 'main');
       $(this.el).html(this.renderTemplate(this._template));
+      this._container = $(this.el).find('#' + this._context + '-container');
     },
 
     // Internal render method for sub class to override to implement different features.
