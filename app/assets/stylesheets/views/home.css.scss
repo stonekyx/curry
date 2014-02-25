@@ -23,6 +23,9 @@
       .figure-left {
         @include game-sprite('figure-left');
       }
+      #player {
+        position: relative;
+      }
     }
   }
 }

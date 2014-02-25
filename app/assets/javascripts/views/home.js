@@ -27,7 +27,14 @@
       this._container.find('.map').attr('tabindex', 0);
       this._container.find('.map').focus();
       this.game._running = true;
-      this.game.timer = setInterval(function(){}, 30);
+      this.game.timer = setInterval((function(self){
+          return function() {
+              var player = self._container.find('#player');
+              var pos = player.position();
+              player.css('left', '+='+self.game.player.speedRight*3);
+              player.css('top', '+='+self.game.player.speedDown*3);
+          }
+      })(this), 30);
     },
     _onGameEnd: function(evnet) {
       this._container.find('.map').removeAttr('tabindex');
@@ -47,6 +54,8 @@
     },
     _onLoseDirection: function(event) {
       this.game._keypressing = false;
+      this.game.player.speedDown = 0;
+      this.game.player.speedRight = 0;
     }
   });
 }).call(this, jQuery);
