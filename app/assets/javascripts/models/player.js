@@ -7,27 +7,49 @@
 
     readOnly: false,
 
+    playerPos: {
+        left: 0,
+        top: 0
+    },
+
+    checkPoints: [],
+
     attributesMap: [
       { classPrefix: null },
       { className:   null },
       { direction: function(keyCode) {
+          // TODO: stone, hard-coded values
           var d = '';
+          this.deltaTop = "";
+          this.deltaLeft = "";
           switch(keyCode) {
             case Curry.Constants.keyCodes['W']:
               d = 'up';
-              this.speedDown = -1;
+              if(this.playerPos.top >= 26) {
+                  this.deltaTop = "-=26px";
+                  this.deltaLeft = "";
+              }
               break;
             case Curry.Constants.keyCodes['A']:
               d = 'left';
-              this.speedRight = -1;
+              if(this.playerPos.left >= 26) {
+                  this.deltaTop = "";
+                  this.deltaLeft = "-=26px";
+              }
               break;
             case Curry.Constants.keyCodes['S']:
               d = 'down';
-              this.speedDown = 1;
+              if(this.playerPos.top < 260-26) {
+                  this.deltaTop = "+=26px";
+                  this.deltaLeft = "";
+              }
               break;
             case Curry.Constants.keyCodes['D']:
               d = 'right';
-              this.speedRight = 1;
+              if(this.playerPos.left < 960-26) {
+                  this.deltaTop = "";
+                  this.deltaLeft = "+=26px";
+              }
               break;
           }
 
@@ -37,8 +59,6 @@
           return d;
         }
       },
-      { speedDown:  0 },
-      { speedRight: 0 }
     ],
   });
 }).call(this, jQuery);

@@ -17,6 +17,7 @@
       this._super("initialize", options);
       this._template = options.template;
       this._context  = options.context;
+      this.options = options;
     },
 
     /* Rendering Functions */

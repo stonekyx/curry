@@ -11,10 +11,15 @@
     },
 
     _template: 'home/index',
+    _models: {},
 
     _startAction: function(contextKey) {
       this._generatePageConfigs(contextKey);
-      return this.swap(new Curry.Views.Home({template: this._template, context: contextKey}))
+      if(Curry.Verifier.isAnonymousUser()) {
+          // TODO: zanwen, need to handle params in a centralized way.
+          this._models.gamePlayer = new Curry.Models.GamePlayer({class_prefix: 'figure'});
+      } // TODO: stone, consider other situations.
+      return this.swap(new Curry.Views.Home({template: this._template, context: contextKey, models: this._models}));
     },
 
     index: function() {
