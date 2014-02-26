@@ -60,6 +60,20 @@
                     this.model.playerPos.left += 26;
                     break;
             }
+            for(var i=0; i<this.model.checkPoints.length; i++) {
+                var elt = this.model.checkPoints[i];
+                if(elt[0]*26==this.model.playerPos.top &&
+                   elt[1]*26==this.model.playerPos.left) {
+                    if(elt[2]===0) {
+                        this.model.goalCount++;
+                    }
+                    elt[2] = 1;
+                    if(this.model.goalCount >= this.model.checkPoints.length) {
+                        alert('success');
+                        break;
+                    }
+                }
+            };
         }
       } else {
         this._keypressing = false;
