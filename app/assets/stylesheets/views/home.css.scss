@@ -11,20 +11,27 @@
       width:  960px;
       height: 260px;
       padding: 20px;
-      .figure-up {
-        @include game-sprite('figure-up');
-      }
-      .figure-right {
-        @include game-sprite('figure-right');
-      }
-      .figure-down {
-        @include game-sprite('figure-down');
-      }
-      .figure-left {
-        @include game-sprite('figure-left');
-      }
-      #player {
+      .playground {
         position: relative;
+        [id*='path-'] {
+          background: $path-background;
+          position: absolute;
+        }
+        #player {
+          position: absolute;
+        }
+        .figure-up {
+          @include game-sprite('figure-up');
+        }
+        .figure-right {
+          @include game-sprite('figure-right');
+        }
+        .figure-down, .figure-default {
+          @include game-sprite('figure-down');
+        }
+        .figure-left {
+          @include game-sprite('figure-left');
+        }
       }
     }
   }

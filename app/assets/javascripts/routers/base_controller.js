@@ -11,24 +11,25 @@
     /* Local Variables */
 
     // The name will be used as a key to store controller history state.
-    name: 'baseController',
+    name: 'base',
 
     // The swapping router of the controller
     router: null,
 
-    // The current view of the controller
+    // The view name of the controller
     pageView: null,
 
     // Configs of current page
-    pageConfigs: null,
+    pageConfigs: {},
+
+    // Models of current page
+    pageModels:  {},
 
     /* Page Data Functions */
 
-    _getPageConfigs: function() {
-      return this.pageConfigs || [];
+    _generatePageConfigs: function(context) {
+      this.pageConfigs.accessKey = Curry.Observer.getGroupId();
     },
-
-    _generatePageConfigs: function(context) {},
 
     _checkValid: function() {
       return !Curry.Utils.isBlank(this.router);
@@ -55,7 +56,7 @@
         // TODO: zanwen, should throw exceptions here.
       }
 
-      this.pageView = view;
+      this.pageView = view.name;
       this.router.swap(view);
       return true;
     },

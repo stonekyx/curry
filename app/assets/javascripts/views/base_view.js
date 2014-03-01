@@ -6,7 +6,7 @@
     /* Local Variables */
 
     // The name will be used as a key to store page location.
-    name: 'baseView',
+    name: 'base',
 
     // The events will be used in a specific page.
     events: {},
@@ -14,10 +14,10 @@
     /* Page Data Functions */
 
     initialize: function(options) {
-      this._super("initialize", options);
+      this._super('initialize', options);
       this._template = options.template;
       this._context  = options.context;
-      this.options = options;
+      this._models   = options.models;
     },
 
     /* Rendering Functions */
@@ -36,14 +36,16 @@
       this._container = $(this.el).find('#' + this._context + '-container');
     },
 
-    // Internal render method for sub class to override to implement different features.
+    // Internal render method for subclass to override to implement different features.
     renderInternal: function() {},
 
     beforeRender: function() {},
 
     render: function() {
+      this.beforeRender();
       this.renderFramework();
       this.renderInternal();
+      this.afterRender();
       return this;
     },
 

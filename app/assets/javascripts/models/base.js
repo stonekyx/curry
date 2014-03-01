@@ -6,7 +6,7 @@
     /* Local Variables */
 
     // The name will be used as a key to store the current model.
-    name: 'baseModel',
+    name: 'base',
 
     // The readOnly is used to mark whether the model can be modified.
     readOnly: true,

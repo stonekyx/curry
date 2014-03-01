@@ -16,10 +16,10 @@
     /* Local Variables */
 
     // The name will be used as a key to store controller history state.
-    name: 'routeController',
+    name: 'route',
 
-    pageModels:  null,
-    pageView:    null,
+    // The current view of the controller
+    currentView: null,
 
     swapTimeoutThreshold: 500,
     _isFirstLoad: null,
@@ -33,14 +33,6 @@
     // Find the root element of content view.
     _attachRootEl: function() {
       this.el = $('#content-container');
-    },
-
-    _getPageModels: function() {
-      return this.pageModels || [];
-    },
-
-    _getPageView: function() {
-      return this.pageView;
     },
 
     /* Swapping Functions */
@@ -70,27 +62,24 @@
 
     // Swap to the new view.
     swap: function(view) {
-      if (view == null) {
-        // TODO: zanwen, should throw exceptions here.
-      }
-      this._isFirstLoad = Curry.Utils.isBlank(this.pageView);
-      this.pageView = view;
+      this._isFirstLoad = Curry.Utils.isBlank(this.currentView);
+      this.currentView = view;
       if (this._isFirstLoad) {
         //TODO: zanwen, should do something here, like bind events etc.
       }
 
       this._beforeSwap();
-      this._preparePageData();
-      //TODO: zanwen, should move the _afterSwap logic to _preparePageData, since it can be saved with error page.
+      this._tryToSwap();
+      //TODO: zanwen, should move the _afterSwap logic to _tryToSwap, since it can be saved with error page.
       this._afterSwap();
     },
 
     _beforeSwap: function() {},
 
-    _preparePageData: function() {},
+    _tryToSwap: function() {},
 
     _afterSwap: function() {
-      $(this.el).empty().append(this.pageView.render().el);
+      $(this.el).empty().append(this.currentView.render().el);
     }
   });
 }).call(this, jQuery);

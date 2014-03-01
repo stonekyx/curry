@@ -28,7 +28,15 @@
      * Determine whether the given object is blank.
      */
     isBlank: function(variable) {
-      return (Curry.Utils.isUndefined(variable) || Curry.Utils.isNull(variable) || /^\s*$/.test(variable));
+      if(Curry.Utils.isUndefined(variable) || Curry.Utils.isNull(variable)) return true;
+
+      var type = Object.prototype.toString.call(variable).slice(8, -1);
+      switch(type) {
+        case 'String': return !$.trim(variable);
+        case 'Array' : return !variable.length;
+        case 'Object': return $.isEmptyObject(variable);
+      }
+      return false;
     }
   };
 }).call(this, jQuery);
