@@ -17,7 +17,7 @@
 
     currentCursor: 0,
 
-    farthestCursor: 0,
+    farthestCursor: -1,
 
     leftFrameNumber: 0,
 
@@ -77,10 +77,10 @@
       { updateCurrentPath: function() {
           var grid = {};
           if(this.currentCursor > this.farthestCursor) {
+            this.farthestCursor = this.currentCursor;
             grid.id = this.farthestCursor;
             grid.position = this.checkPoints[this.farthestCursor];
             grid.size = this.imageSize;
-            this.farthestCursor = this.currentCursor;
           }
 
           return grid;
