@@ -18,7 +18,6 @@
 //= require vendor/jquery.jsonp.js
 //= require vendor/jquery.resize.js
 //= require vendor/jquery.tinyscrollbar.js
-//= require vendor/jquery.transition.js
 //= require vendor/jquery.url.js
 //= require vendor/backbone-patch.js
 //= require vendor/backbone-super.js

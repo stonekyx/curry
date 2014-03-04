@@ -5,7 +5,7 @@
 #home-container {
   .game-section {
     text-align: center;
-    .map {
+    #map {
       background: $game-background;
       display: inline-block;
       width:  960px;
@@ -15,10 +15,12 @@
         position: relative;
         [id*='path-'] {
           background: $path-background;
+          display: none;
           position: absolute;
         }
         #player {
           position: absolute;
+          border-radius: $border-radius;
         }
         .figure-up {
           @include game-sprite('figure-up');

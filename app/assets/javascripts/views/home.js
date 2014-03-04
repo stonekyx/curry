@@ -9,10 +9,10 @@
 
     events: {
       // TODO: zanwen, should add <span> to toggle game start & end.
-      'click .map': '_onGameStart',
-      'blur .map': '_onGameEnd',
-      'keydown .map': '_onEnterDirection',
-      'keyup .map': '_onLoseDirection'
+      'click #map': '_onGameStart',
+      'blur #map': '_onGameEnd',
+      'keydown #map': '_onEnterDirection',
+      'keyup #map': '_onLoseDirection'
     },
 
     beforeRender: function() {
@@ -32,8 +32,8 @@
     },
 
     _onGameStart: function(event) {
-      this._container.find('.map').attr('tabindex', 0);
-      this._container.find('.map').focus();
+      this._container.find('#map').attr('tabindex', 0);
+      this._container.find('#map').focus();
       this.game.running = true;
       this.game.keypressing = -1;
 
@@ -49,18 +49,19 @@
         var tempGrid = self.player.updateCurrentPath();
         if(!Curry.Utils.isBlank(tempGrid)) {
           var pathId = 'path-' + tempGrid.id;
-          self.locationEl.before("<div id='" + pathId + "'></div>");
-          self.playgroundEl.find('#'+pathId).css('top',  (tempGrid.position[0]*tempGrid.size)+'px');
-          self.playgroundEl.find('#'+pathId).css('left', (tempGrid.position[1]*tempGrid.size)+'px');
-          self.playgroundEl.find('#'+pathId).css('width', tempGrid.size+'px');
+          self.locationEl.before("<div id='" + pathId + "' class='curry-border'></div>");
+          self.playgroundEl.find('#'+pathId).css('top',    (tempGrid.position[0]*tempGrid.size)+'px');
+          self.playgroundEl.find('#'+pathId).css('left',   (tempGrid.position[1]*tempGrid.size)+'px');
+          self.playgroundEl.find('#'+pathId).css('width',  tempGrid.size+'px');
           self.playgroundEl.find('#'+pathId).css('height', tempGrid.size+'px');
+          self.playgroundEl.find('#'+pathId).fadeIn('slow');
         }
       };
       this.game.timer = setInterval(drawStuffs, Curry.Constants.game.refreshInterval);
       this.listenTo(this.game.player, 'goalReached', this._onGoalReached);
     },
     _onGameEnd: function(evnet) {
-      this._container.find('.map').removeAttr('tabindex');
+      this._container.find('#map').removeAttr('tabindex');
       this.game.running = false;
       clearInterval(this.game.timer);
     },
@@ -73,10 +74,9 @@
       this.game.keypressing = -1;
     },
     _onGoalReached: function() {
-        // TODO: stone, make some ending effect that is more meaningful.
-        alert("おめでとう！");
-        $(this.el).off('click', '.map');
-        _onGameEnd(null);
+      // TODO: stone, make some ending effect that is more meaningful.
+      alert("おめでとう！");
+      _onGameEnd(null);
     }
   });
 }).call(this, jQuery);

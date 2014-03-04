@@ -50,14 +50,11 @@
           if(dir == -1) return 0;
 
           if(this.currentCursor < this.checkPoints.length - 1 &&
-             this.checkPoints[this.currentCursor][1] < this.checkPoints[this.currentCursor+1][1]-1 &&
-             dir == 1) {
-             return 1;
-          }
-
-          if(this.currentCursor < this.checkPoints.length - 1 &&
              this.checkPoints[this.currentCursor][0] + this.moveVector[dir][0] == this.checkPoints[this.currentCursor+1][0] &&
              this.checkPoints[this.currentCursor][1] + this.moveVector[dir][1] == this.checkPoints[this.currentCursor+1][1]) return 1;
+
+          if(this.currentCursor < this.checkPoints.length - 1 &&
+             this.checkPoints[this.currentCursor+1][1] - this.checkPoints[this.currentCursor][1] > 1) return 1;
 
           if(this.currentCursor > 0 &&
              this.checkPoints[this.currentCursor][0] + this.moveVector[dir][0] == this.checkPoints[this.currentCursor-1][0] &&
@@ -66,21 +63,19 @@
           return 0;
         }
       },
-      { getCurrentStatus: function() {
-          return this.currentVector;
-        }
-      },
       { getCurrentPosition: function() {
           return this.currentPosition;
         }
       },
       { updateCurrentStatus: function(newDirection) {
           // Called first on key press, validate specified move, and initialize the move.
+          if(newDirection === -1) return;
+
           if(this.currentDirection == -1) {
             var validation = this.checkPosition(newDirection);
+            this.className = this.classPrefix + '-' + this.moveDirName[newDirection];
             if(validation) {
               this.currentDirection = newDirection;
-              this.className = this.classPrefix + '-' + this.moveDirName[newDirection];
               this.leftFrameNumber = validation * Curry.Constants.game.framePerBlock;
               this.currentVector[0] = (this.checkPoints[this.currentCursor+validation][0] - this.checkPoints[this.currentCursor][0])*this.imageSize/Curry.Constants.game.framePerBlock;
               this.currentVector[1] = (this.checkPoints[this.currentCursor+validation][1] - this.checkPoints[this.currentCursor][1])*this.imageSize/Curry.Constants.game.framePerBlock;
@@ -114,7 +109,7 @@
             this.currentCursor += delta;
             this.currentDirection = -1;
             if(this.currentCursor == this.checkPoints.length - 1) {
-              // TODO: zanwen, Should go to the end of the game, but cannot complete it in player model part. Perhaps trigger event...
+              // TODO: zanwen, Should trigger events in a more centralized way with eventManger or else.
               this.trigger('goalReached');
             }
           }
