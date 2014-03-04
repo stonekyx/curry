@@ -57,6 +57,7 @@
         }
       };
       this.game.timer = setInterval(drawStuffs, Curry.Constants.game.refreshInterval);
+      this.listenTo(this.game.player, 'goalReached', this._onGoalReached);
     },
     _onGameEnd: function(evnet) {
       this._container.find('.map').removeAttr('tabindex');
@@ -70,6 +71,12 @@
     },
     _onLoseDirection: function(event) {
       this.game.keypressing = -1;
+    },
+    _onGoalReached: function() {
+        // TODO: stone, make some ending effect that is more meaningful.
+        alert("おめでとう！");
+        $(this.el).off('click', '.map');
+        _onGameEnd(null);
     }
   });
 }).call(this, jQuery);
