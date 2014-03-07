@@ -12,6 +12,8 @@
      */
     routes: {
       '': 'HomeController.index',
+      'signup': 'SignupController.index',
+      'thanks': 'SignupController.thanks',
       //TODO: zanwen, should verify the regex for ErrorController.
       '.*': 'ErrorController.error404'
     }

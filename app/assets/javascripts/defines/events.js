@@ -1,7 +1,18 @@
 // Define all Curry related events.
 
-Curry.Events = {};
+Curry.Events = {
+  COLLECTION: _.clone(Backbone.Events),
 
-Curry.Events.Application = {
-  READY: 'READY'
+  Views: {
+    BEFORE_SWAP: 'BEFORE-SWAP',
+    Home: {
+      GAMEOVER: 'GAME-OVER',
+    }
+  },
+
+  APPLICATION: {
+    READY: 'READY'
+  },
+
+  END: {}
 };

@@ -20,7 +20,7 @@
 
     _retrieveModelByKey: function(key) {
       var tempModel = null;
-      if(key == 0) {
+      if (key == 0) {
         tempModel = new Curry.Models.GamePlayer({class_prefix: 'figure'});
       }
 
@@ -30,7 +30,7 @@
     _generatePageModels: function(configs) {
       this.pageModels['accessKey'] = configs.accessKey;
       this.pageModels['user'] = {};
-      for (var i=0; i<Curry.Constants.groupNumLimit; i++) {
+      for (var i=0; i<Curry.Constants.GROUPNUMBER; i++) {
         if (this.pageModels.accessKey & 1 << i) {
           this.pageModels['user'][i] = this._retrieveModelByKey(i);
         }

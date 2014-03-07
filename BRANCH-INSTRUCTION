@@ -10,9 +10,31 @@ Overall WorkFlow For 'spared-develop':
       No.x for Base-Commit SHA.  like No.1 for 224e054d(first eight bits are enough)
 
     Part 2:
-      Type & Subject             like Code-Change & Let player in home page game walk
+      Type & Subject             like 'Code-Change & Let Player In Home Page Game Walk'
         Type Contains:
           Base-Commit,  it clarifies the goal of the whole commit.
           Code-Change,  it adds function for Base-Commit.
           Code-Review,  it adds comments start with 'COMMENT: blablabla' for Last-Change.
           Final-Commit, it is the final version for Base-Commit, and it will be cherry-picked to 'develop' branch.
+
+
+
+DIRECTIONS FOR SETTING UP DATABASE & USAGE OF SIGNUP AND LOGIN FUNCTION:
+
+1. connect to mysql:
+    mysql -uroot -p
+
+2. create user:
+    CREATE USER 'sitedev'@'localhost' IDENTIFIED BY '112233aabbcc';
+    GRANT SELECT, INSERT, DELETE, UPDATE ON curry.* TO 'sitedev'@'localhost';
+    FLUSH PRIVILEGES;
+
+3. create database and a table for testing:
+    CREATE DATABASE curry;
+    source ~/Projects/Curry/config/dbtables/users.sql;
+
+4. go to '/signup' page and fill your info
+
+5. login with your email & pwd  ==> HERE COMES THE RESULTS
+
+PS: Plz don't deprecate it now. sigh

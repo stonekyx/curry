@@ -12,9 +12,11 @@
 //
 //= require_tree ./templates
 //= require ./views/base_view
+//= require ./controls/base_controls
 //= require ./routers/route_controller
 //= require ./routers/base_controller
 //= require_tree ./views
+//= require_tree ./controls
 //= require_tree ./routers
 
 if (window.jsloaded) {

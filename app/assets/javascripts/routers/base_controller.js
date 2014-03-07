@@ -28,7 +28,7 @@
     /* Page Data Functions */
 
     _generatePageConfigs: function(context) {
-      this.pageConfigs.accessKey = Curry.Observer.getGroupId();
+      this.pageConfigs.accessKey = Curry.Helpers.Observer.getGroupId();
     },
 
     _checkValid: function() {
@@ -53,7 +53,7 @@
     swap: function(view) {
       if (!this._checkValid()) return false;
       if (view == null) {
-        // TODO: zanwen, should throw exceptions here.
+        //TODO: zanwen, should throw exceptions here.
       }
 
       this.pageView = view.name;

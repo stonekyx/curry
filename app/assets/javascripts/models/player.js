@@ -40,6 +40,16 @@
       [0,28], [1,28], [1,29], [2,29], [2,30], [3,30], [3,31], [4,31], [5,31], [6,31], [7,31], [8,31], [9,31], [8,31], [7,31], [6,31], [5,31], [4,31], [3,31], [3,32], [2,32], [2,33], [1,33], [1,34], [0,34]
     ],
 
+    _attachEvents: function() {
+      Curry.Utils.EventManager.bind(Curry.Events.Views.Home.GAMEOVER, this._onGameOver, this);
+    },
+
+    _onGameOver: function() {
+      // TODO: stone, make some ending effect that is more meaningful.
+      alert("おめでとう！");
+      // this._vanish();
+    },
+
     attributesMap: [
       { classPrefix: 'figure' },
       { className:   'figure-default' },
@@ -47,16 +57,16 @@
           // 0 means invalid direction
           //-1 means valid direction to step back
           // 1 means valid direction to step forward
-          if(dir == -1) return 0;
+          if (dir == -1) return 0;
 
-          if(this.currentCursor < this.checkPoints.length - 1 &&
+          if (this.currentCursor < this.checkPoints.length - 1 &&
              this.checkPoints[this.currentCursor][0] + this.moveVector[dir][0] == this.checkPoints[this.currentCursor+1][0] &&
              this.checkPoints[this.currentCursor][1] + this.moveVector[dir][1] == this.checkPoints[this.currentCursor+1][1]) return 1;
 
-          if(this.currentCursor < this.checkPoints.length - 1 &&
+          if (this.currentCursor < this.checkPoints.length - 1 &&
              this.checkPoints[this.currentCursor+1][1] - this.checkPoints[this.currentCursor][1] > 1) return 1;
 
-          if(this.currentCursor > 0 &&
+          if (this.currentCursor > 0 &&
              this.checkPoints[this.currentCursor][0] + this.moveVector[dir][0] == this.checkPoints[this.currentCursor-1][0] &&
              this.checkPoints[this.currentCursor][1] + this.moveVector[dir][1] == this.checkPoints[this.currentCursor-1][1]) return -1;
 
@@ -69,16 +79,16 @@
       },
       { updateCurrentStatus: function(newDirection) {
           // Called first on key press, validate specified move, and initialize the move.
-          if(newDirection === -1) return;
+          if (newDirection === -1) return;
 
-          if(this.currentDirection == -1) {
+          if (this.currentDirection == -1) {
             var validation = this.checkPosition(newDirection);
             this.className = this.classPrefix + '-' + this.moveDirName[newDirection];
-            if(validation) {
+            if (validation) {
               this.currentDirection = newDirection;
-              this.leftFrameNumber = validation * Curry.Constants.game.framePerBlock;
-              this.currentVector[0] = (this.checkPoints[this.currentCursor+validation][0] - this.checkPoints[this.currentCursor][0])*this.imageSize/Curry.Constants.game.framePerBlock;
-              this.currentVector[1] = (this.checkPoints[this.currentCursor+validation][1] - this.checkPoints[this.currentCursor][1])*this.imageSize/Curry.Constants.game.framePerBlock;
+              this.leftFrameNumber = validation * Curry.Constants.GAME.FRAMEPERBLOCK;
+              this.currentVector[0] = (this.checkPoints[this.currentCursor+validation][0] - this.checkPoints[this.currentCursor][0])*this.imageSize/Curry.Constants.GAME.FRAMEPERBLOCK;
+              this.currentVector[1] = (this.checkPoints[this.currentCursor+validation][1] - this.checkPoints[this.currentCursor][1])*this.imageSize/Curry.Constants.GAME.FRAMEPERBLOCK;
             }
           }
         }
@@ -86,7 +96,7 @@
       { updateCurrentPath: function() {
           // When the moving animation has finished, add a 'path' div before player figure, forming a list of path points.
           var grid = {};
-          if(this.currentCursor > this.farthestCursor) {
+          if (this.currentCursor > this.farthestCursor) {
             this.farthestCursor = this.currentCursor;
             grid.id = this.farthestCursor;
             grid.position = this.checkPoints[this.farthestCursor];
@@ -98,19 +108,19 @@
       },
       { updateCurrentPosition: function() {
           // Do the actual move in frames. When the move finishes, update currentCursor to point to the new checkPoint.
-          if(this.currentDirection == -1) return;
+          if (this.currentDirection == -1) return;
 
           this.currentPosition[0] += this.currentVector[0];
           this.currentPosition[1] += this.currentVector[1];
           var delta = (this.leftFrameNumber > 0) ? 1 : -1;
           this.leftFrameNumber -= delta;
-          if(this.leftFrameNumber == 0) {
+          if (this.leftFrameNumber == 0) {
             // Using the sign of leftFrameNumber to decide next checkPoint, as leftFrameNumber was assigned with the same sign as validation, which actually makes the decision.
             this.currentCursor += delta;
             this.currentDirection = -1;
-            if(this.currentCursor == this.checkPoints.length - 1) {
-              // TODO: zanwen, Should trigger events in a more centralized way with eventManger or else.
-              this.trigger('goalReached');
+            if (this.currentCursor == this.checkPoints.length - 1) {
+              //TODO: zanwen, Should trigger events in a more centralized way with eventManger or else.
+              Curry.Events.COLLECTION.trigger(Curry.Events.Views.Home.GAMEOVER);
             }
           }
         }

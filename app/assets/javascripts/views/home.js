@@ -3,12 +3,12 @@
    * @class: HomeView implemets the page logic of home page.
    */
   Curry.Views.Home = Curry.Views.BaseView.extend({
-    // _container points to div#container in js template home/game
-    // el is div#main surrounding _container
+    //NOTE: _container points to div#container in js template home/game
+    //NOTE: el is div#main surrounding _container
     name: 'home',
 
     events: {
-      // TODO: zanwen, should add <span> to toggle game start & end.
+      //TODO: zanwen, should add <span> to toggle game start & end.
       'click #map': '_onGameStart',
       'blur #map': '_onGameEnd',
       'keydown #map': '_onEnterDirection',
@@ -22,7 +22,7 @@
       this.manager     = this._models['user'][2];
     },
     renderInternal: function() {
-      if(this.game && this.game.player) {
+      if (this.game && this.game.player) {
         this._container.html(this.renderTemplate('home/game'));
         this.game.playgroundEl = this._container.find('.playground');
         this.game.locationEl = this._container.find('#player');
@@ -47,7 +47,7 @@
         self.locationEl.css('left', currentLocation[1]+'px');
 
         var tempGrid = self.player.updateCurrentPath();
-        if(!Curry.Utils.isBlank(tempGrid)) {
+        if (!Curry.Utils.isBlank(tempGrid)) {
           var pathId = 'path-' + tempGrid.id;
           self.locationEl.before("<div id='" + pathId + "' class='curry-border'></div>");
           self.playgroundEl.find('#'+pathId).css('top',    (tempGrid.position[0]*tempGrid.size)+'px');
@@ -57,8 +57,7 @@
           self.playgroundEl.find('#'+pathId).fadeIn('slow');
         }
       };
-      this.game.timer = setInterval(drawStuffs, Curry.Constants.game.refreshInterval);
-      this.listenTo(this.game.player, 'goalReached', this._onGoalReached);
+      this.game.timer = setInterval(drawStuffs, Curry.Constants.GAME.REFRESHINTERVAL);
     },
     _onGameEnd: function(evnet) {
       this._container.find('#map').removeAttr('tabindex');
@@ -68,15 +67,10 @@
     _onEnterDirection: function(event) {
       // Only one of 'W', 'A', 'S', 'D' can be pressed anytime.
       if (this.game.keypressing != -1) return;
-      this.game.keypressing = _.indexOf(Curry.Constants.keyCodes.directionList, event.keyCode);
+      this.game.keypressing = _.indexOf(Curry.Constants.KEYCODES.DIRECTIONLIST, event.keyCode);
     },
     _onLoseDirection: function(event) {
       this.game.keypressing = -1;
     },
-    _onGoalReached: function() {
-      // TODO: stone, make some ending effect that is more meaningful.
-      alert("おめでとう！");
-      _onGameEnd(null);
-    }
   });
 }).call(this, jQuery);

@@ -1,0 +1,19 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: curry
+  pool: 5
+  username: sitedev
+  password: "112233aabbcc"
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: curry
+  pool: 5
+  username: sitedev
+  password: "112233aabbcc"
+  socket: /var/run/mysqld/mysqld.sock

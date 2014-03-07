@@ -1,0 +1,22 @@
+#popup-body-container {
+  position: fixed;
+  background: $popup-background;
+  border-radius: $border-radius;
+  padding: 20px;
+  //TODO: zanwen, attributes 'top' & 'left' should be calculated dynamically according to the size of popup box
+  top: 200px;
+  left: 500px;
+
+  #login-container {
+    .form-container {
+      input {
+        background: $input-background;
+      }
+    }
+    .button-container {
+      #login-btn {
+        float: right;
+      }
+    }
+  }
+}

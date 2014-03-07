@@ -7,8 +7,8 @@
     max-width: $page-max-width;
     margin: 0 auto;
     position: relative;
-    .banner {
-      margin: 0 $page-container-horizontal-padding + $page-border-width
+    .navbar-inner {
+      padding: 0 $page-container-horizontal-padding + $page-border-width;
     }
   }
 }

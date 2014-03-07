@@ -1,0 +1,7 @@
+# The user.id in users table
+CURRY_UID:
+  name: _curry_uid
+
+# The user.first_name in users tab
+CURRY_UNAME:
+  name: _curry_uname

@@ -10,9 +10,6 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore ths database config file temporarily before share the same database
-/config/database.yml
-
 # Ignore sprite maps
 /app/assets/0sprites
 

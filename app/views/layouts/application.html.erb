@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Curry</title>
-  <link rel='shortcut icon' href='/favicon.ico' />
-  <%= stylesheet_link_tag    'application', :media => 'all' %>
-  <%= javascript_include_tag 'application_core' %>
-  <%= javascript_include_tag 'application_framework' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <script type='text/javascript'>
-  <%# wrap with jquery %>
-  (function($) {
-    $(document).ready(function() {
-      var loaded = (window.jsloaded && window.jsloaded.applicationCore && window.jsloaded.applicationFrameWork && window.jsloaded.application && window.JST);
-      Curry.init();
-      Curry.run();
-    });
-  })(jQuery);
-  </script>
-</head>
-<body>
-  <div id='wrap'>
-    <div id='page-left-shadow'  class='z-index-layer-1'></div>
-    <div id='page-right-shadow' class='z-index-layer-1'></div>
-    <div id='page-background'   class='z-index-layer-1'></div>
-    <div id='inner-wrap'        class='z-index-layer-2'>
-      <div id='header-wrap' ><%= render :partial => 'shared/header' %></div>
-      <div id='content-wrap'><%= yield %></div>
-      <div id='footer-wrap' ><%= render :partial => 'shared/footer' %></div>
+  <head>
+    <script type='text/javascript'>
+      window.CookieKeys = <%= Cookies.get_all_configs.to_json.html_safe %>
+    </script>
+    <%= stylesheet_link_tag    'application', :media => 'all' %>
+    <%= javascript_include_tag 'application_core' %>
+    <%= javascript_include_tag 'application_framework' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <script type='text/javascript'>
+    <%# wrap with jquery %>
+    (function($) {
+      $(document).ready(function() {
+        var loaded = (window.jsloaded && window.jsloaded.applicationCore && window.jsloaded.applicationFrameWork && window.jsloaded.application && window.JST);
+        Curry.init();
+        Curry.run();
+      });
+    })(jQuery);
+    </script>
+
+    <title>Curry</title>
+    <link rel='shortcut icon' href='/favicon.ico' />
+  </head>
+  <body>
+    <div id='wrap'>
+      <div id='page-left-shadow'  class='z-index-layer-1'></div>
+      <div id='page-right-shadow' class='z-index-layer-1'></div>
+      <div id='page-background'   class='z-index-layer-1'></div>
+      <div id='header-wrap'       class='z-index-layer-3'><div id='header-container' ></div></div>
+      <div id='content-wrap'      class='z-index-layer-2'><%= yield %></div>
+      <div id='footer-wrap'       class='z-index-layer-3'><div id='footer-container' ></div></div>
+      <div id='overlay-wrap'      class='z-index-layer-4'><div id='overlay-container'></div></div>
+      <div id='popup-wrap'        class='z-index-layer-5'><div id='popup-container'  ></div></div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

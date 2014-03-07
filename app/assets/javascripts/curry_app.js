@@ -1,11 +1,12 @@
 (function($) {
   window.Curry = {
     /* Init Namespaces */
-    Models:  {},
-    Views:   {},
-    Routers: {},
-    Configs: {},
-    Global:  {},
+    Models:   {},
+    Views:    {},
+    Controls: {},
+    Routers:  {},
+    Helpers:  {},
+    Configs:  {},
 
     /* Init Variables */
     hasInited:  false,
@@ -31,7 +32,7 @@
     },
 
     run: function() {
-      Backbone.history.start();
+      Backbone.history.start({ pushState: true });
     }
   };
 }).call(this, jQuery);

@@ -28,11 +28,17 @@
 
     initialize: function() {
       this._attachRootEl();
+      this._attachEvents();
     },
 
     // Find the root element of content view.
     _attachRootEl: function() {
       this.el = $('#content-container');
+    },
+
+    // Attach events to the router.
+    _attachEvents: function() {
+      Curry.Utils.EventManager.bind(Curry.Events.Views.BEFORE_SWAP, this._retrieveFrame, this);
     },
 
     /* Swapping Functions */
@@ -60,6 +66,14 @@
       });
     },
 
+    // Retrieve frame beforehand, like header & footer.
+    _retrieveFrame: function() {
+      var frameRouter = new Curry.Routers.FrameController(this);
+      var callback    = frameRouter['index'];
+
+      callback.apply(frameRouter);
+    },
+
     // Swap to the new view.
     swap: function(view) {
       this._isFirstLoad = Curry.Utils.isBlank(this.currentView);
@@ -74,7 +88,9 @@
       this._afterSwap();
     },
 
-    _beforeSwap: function() {},
+    _beforeSwap: function() {
+      Curry.Events.COLLECTION.trigger(Curry.Events.Views.BEFORE_SWAP);
+    },
 
     _tryToSwap: function() {},
 

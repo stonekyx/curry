@@ -28,7 +28,7 @@
      * Determine whether the given object is blank.
      */
     isBlank: function(variable) {
-      if(Curry.Utils.isUndefined(variable) || Curry.Utils.isNull(variable)) return true;
+      if (Curry.Utils.isUndefined(variable) || Curry.Utils.isNull(variable)) return true;
 
       var type = Object.prototype.toString.call(variable).slice(8, -1);
       switch(type) {
