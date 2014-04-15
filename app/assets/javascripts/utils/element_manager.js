@@ -30,6 +30,9 @@
       popupView.afterRender();
       this._attachOverlayEventHandler('click', options.onClickOverlay || popupView._onClickCancel);
       this._attachPopupEventHandler('click', popupView._onClickCancel);
+      //NOTE: Make the container centered.
+      container.css('margin-left', -container.outerWidth()/2+"px");
+      container.css('margin-top', -container.outerHeight()/2+"px");
 
       return;
     },

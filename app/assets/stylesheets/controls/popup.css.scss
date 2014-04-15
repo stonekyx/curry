@@ -4,9 +4,8 @@
   background: $popup-background;
   border-radius: $border-radius;
   padding: 30px;
-  //TODO: zanwen, attributes 'top' & 'left' should be calculated dynamically according to the size of popup box
-  top: 200px;
-  left: 500px;
+  top: 50%;
+  left: 50%;
 
   #popup-content-container {
     #header-container {
