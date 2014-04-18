@@ -19,6 +19,7 @@
 //= require vendor/jquery.resize.js
 //= require vendor/jquery.tinyscrollbar.js
 //= require vendor/jquery.url.js
+//= require vendor/jquery.infieldlabel.js
 //= require vendor/backbone-super.js
 //= require vendor/backbone.queryparams.js
 //= require vendor/mailcheck.js

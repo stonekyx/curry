@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application_core' %>
     <%= javascript_include_tag 'application_framework' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'translation' %>
     <%= csrf_meta_tags %>
     <script type='text/javascript'>
     <%# wrap with jquery %>
@@ -17,7 +18,7 @@
         Curry.init();
         Curry.run();
       });
-    })(jQuery);
+    }).call(this, jQuery);
     </script>
 
     <title>Curry</title>

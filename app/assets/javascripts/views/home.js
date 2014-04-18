@@ -71,6 +71,6 @@
     },
     _onLoseDirection: function(event) {
       this.game.keypressing = -1;
-    },
+    }
   });
 }).call(this, jQuery);

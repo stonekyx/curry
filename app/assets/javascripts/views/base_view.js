@@ -9,7 +9,11 @@
     name: 'base',
 
     // The events will be used in a specific page.
-    events: {},
+    events: {
+      'focus input': '_onFocusField',
+      'input input': '_onInputField',
+      'blur input': '_onBlurField',
+    },
 
     /* Page Data Functions */
 
@@ -46,10 +50,31 @@
       this.beforeRender();
       this.renderFramework();
       this.renderInternal();
-      this.afterRender();
       return this;
     },
 
-    afterRender: function() {}
+    // After render method for subclass to override to initialize page elements.
+    afterRender: function() {},
+
+    _onFocusField: function(evt) {},
+
+    _onInputField: function(evt) {},
+
+    _onBlurField: function(evt) {
+      if (!$(evt.target).hasClass('optional')) {
+        Curry.Utils.Form.advanceFieldProgress(evt.target.name, this.form);
+      }
+    },
+
+    formOverallCheck: function() {
+      if (Curry.Utils.isBlank(this.form) || this.form.length == 0) return false;
+
+      var inputs = this.form.find('input, textarea').not('[type=hidden], .optional');
+      for (var i=0; i<inputs.length; i++) {
+        if (this.form.fieldsStatus[i] != true) return false;
+      }
+
+      return true;
+    }
   });
 }).call(this, jQuery);

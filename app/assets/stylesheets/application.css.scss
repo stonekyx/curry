@@ -15,7 +15,8 @@
 */
 
 @import "sprites";
+@import "./frame/style_constants";
+@import "layout";
 @import "./frame/*";
-@import "./shared/*";
 @import "./controls/*";
 @import "./views/*";

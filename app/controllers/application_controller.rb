@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery
   include Authentication
 
+  before_filter :set_locale
+
+  def set_locale
+    I18n.locale = SITE_LOCALE || I18n.default_locale
+  end
+
   def post_only
     return head(403) unless request.post?
   end

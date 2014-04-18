@@ -5,8 +5,8 @@
 /******************* fonts *******************/
 /* size */
 $large-font-size : 26px;
-$medium-font-size: 15px;
-$small-font-size : 12px;
+$medium-font-size: 18px;
+$small-font-size : 13px;
 
 
 /* weights */
@@ -36,12 +36,13 @@ $grey-d6: #D6D6D6;
 
 /* promotion & error colors */
 $dark-red:  #CC0000;
+$red-background: #F7F5DC;
 $red-error: #B8010F;
 
 /* text and links */
-$text-color: #444444;
-$link-color: #444444;
-$link-hover-color: #66AA33;
+$border-color: $grey-d;
+$text-color: $grey-4;
+$label-color: $grey-9;
 $link-blue:  #3377BB;
 
 /* background */

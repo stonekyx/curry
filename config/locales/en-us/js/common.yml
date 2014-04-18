@@ -1,0 +1,7 @@
+en-us:
+  js:
+    Common:
+      Button:
+        cancel: "Cancel"
+        submit: "Submit"
+        login:  "Login"

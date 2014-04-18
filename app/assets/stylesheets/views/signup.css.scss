@@ -1,0 +1,15 @@
+// Place all the styles related to the Signup View here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#signup-container {
+  .signup-content {
+    display: inline-block;
+    .form-container {
+      .form-title {
+        margin-bottom: 20px;
+        font-size: $large-font-size;
+      }
+    }
+  }
+}

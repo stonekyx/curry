@@ -1,22 +1,32 @@
-#popup-body-container {
+#popup-container {
+  display: none;
   position: fixed;
   background: $popup-background;
   border-radius: $border-radius;
-  padding: 20px;
+  padding: 30px;
   //TODO: zanwen, attributes 'top' & 'left' should be calculated dynamically according to the size of popup box
   top: 200px;
   left: 500px;
 
-  #login-container {
-    .form-container {
-      input {
-        background: $input-background;
+  #popup-content-container {
+    #header-container {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-color;
+      .close-button {
+        float: right;
+        margin-top: -20px;
+        margin-right: -20px;
+        @include mark-sprite('close-button');
+        &:hover {
+          @include mark-sprite('close-button-hover');
+        }
+      }
+      .headline {
+        font-size: $large-font-size;
       }
     }
-    .button-container {
-      #login-btn {
-        float: right;
-      }
+    #body-container {
+      margin-top: 30px;
     }
   }
 }

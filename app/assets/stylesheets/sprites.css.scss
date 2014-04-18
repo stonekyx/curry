@@ -8,6 +8,11 @@ $repeat-y-layout: horizontal;
 $repeat-y-spacing: 2px;
 @import "common/repeat-y/*.png"; /* repeat-y */
 
+$mark-sprite-dimensions: true;
+$mark-layout: vertical;
+$mark-spacing: 2px;
+@import "common/mark/*.png"; /* mark */
+
 $game-sprite-dimensions: true;
 $game-layout: smart;
 $game-spacing: 2px;

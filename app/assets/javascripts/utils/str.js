@@ -33,10 +33,21 @@
     /**
      * Capitalizes the first letter of a string and downcases all the others.
      * @param {String} s string to be evaluated
-     * @return {Boolean} boolean of result
+     * @return {String} The result string
      */
     capitalize: function(s) {
       return s.charAt(0).toUpperCase() + s.substring(1).toLowerCase();
+    },
+
+    /*
+     * Titleize the string, split the whole string ans capitalize each one.
+     * @param {String} s string to be evaluated
+     * @return {String} The result string
+     */
+    titleize: function(s) {
+      return s.toLowerCase().replace(/(?:^|[-_])(\w)/g, function(_, c, index) {
+        return (index == 0 ? '' : ' ') + c.toUpperCase();
+      });
     },
 
     /**
@@ -45,9 +56,9 @@
      * @param {boolean} [firstCapitalize=false] whether upcase first letter
      */
     camelize: function(str, firstCapitalize) {
-      return str.toLowerCase().replace (/(?:^|[-_])(\w)/g, function (_, c, index) {
-        return index == 0 && !firstCapitalize ? c : c.toUpperCase ();
-      })
+      return str.toLowerCase().replace(/(?:^|[-_])(\w)/g, function (_, c, index) {
+        return index == 0 && !firstCapitalize ? c : c.toUpperCase();
+      });
     },
 
     /**
@@ -60,6 +71,6 @@
       return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
         return index == 0 ? letter.toLowerCase() : connector + letter.toLowerCase();
       });
-    },
+    }
   };
 }).call(this, jQuery);

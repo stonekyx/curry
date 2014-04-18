@@ -1,0 +1,44 @@
+.form-container {
+  .virtual-input-row {
+    margin-bottom: 25px;
+    .input-row {
+      display: inline-block;
+      .input-box {
+        .full-width {
+          width: 310px;
+        }
+        .error {
+          background-color: $red-background;
+        }
+
+        label {
+          position: absolute;
+          font-size: $medium-font-size;
+          color: $label-color;
+          padding: 10px;
+        }
+
+        input {
+          font-size: $medium-font-size;
+          padding: 9px;
+          margin-bottom: 0px;
+        }
+      }
+      .message {
+        &:not(.error) {
+          visibility: hidden;
+        }
+        position: absolute;
+        margin-top: 5px;
+        font-size: $small-font-size;
+        color: $red-error;
+      }
+    }
+  }
+  .blank-line {
+    height: 20px;
+  }
+}
+.button-container {
+  float: right;
+}

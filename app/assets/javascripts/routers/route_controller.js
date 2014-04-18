@@ -96,6 +96,7 @@
 
     _afterSwap: function() {
       $(this.el).empty().append(this.currentView.render().el);
+      this.currentView.afterRender();
     }
   });
 }).call(this, jQuery);

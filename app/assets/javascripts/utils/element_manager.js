@@ -26,8 +26,10 @@
       var container = this._getPopupEl();
       var popupView = new this.registedPopup[name](params);
       this._showOverlay();
-      this._attachOverlayEventHandler('click', options.onClickOverlay || popupView._onClickCancel);
       container.empty().append(popupView.render().el).show();
+      popupView.afterRender();
+      this._attachOverlayEventHandler('click', options.onClickOverlay || popupView._onClickCancel);
+      this._attachPopupEventHandler('click', popupView._onClickCancel);
 
       return;
     },
@@ -40,6 +42,7 @@
       container.empty().hide();
       this._hideOverlay();
       this._detachOverlayEventHandler('click');
+      this._detachPopupEventHandler('click');
 
       return;
     },
@@ -50,7 +53,7 @@
     _getParamsByType: function(type) {
       var params = {};
       params.template = type + '/index';
-      params.context  = type + '-body';
+      params.context  = type + '-content';
 
       return params;
     },
@@ -94,11 +97,27 @@
     },
 
     /*
+     * Attach handler to popup event.
+     */
+    _attachPopupEventHandler: function(evt, handler) {
+      var container = this._getPopupEl();
+      container.find('.cancel').bind(evt, handler);
+    },
+
+    /*
      * Detach handler to overlay event.
      */
     _detachOverlayEventHandler: function(evt, handler) {
       var container = this._getOverlayEl();
       container.unbind(evt, handler);
+    },
+
+    /*
+     * Detach handler to popup event.
+     */
+    _detachPopupEventHandler: function(evt, handler) {
+      var container = this._getPopupEl();
+      container.find('.cancel').unbind(evt, handler);
     }
   };
 }).call(this, jQuery);
