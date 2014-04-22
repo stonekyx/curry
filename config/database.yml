@@ -6,7 +6,8 @@ development:
   pool: 5
   username: sitedev
   password: "112233aabbcc"
-  socket: /var/run/mysqld/mysqld.sock
+  host: 210.30.96.32
+  port: 3306
 
 production:
   adapter: mysql
@@ -16,4 +17,5 @@ production:
   pool: 5
   username: sitedev
   password: "112233aabbcc"
-  socket: /var/run/mysqld/mysqld.sock
+  host: 210.30.96.32
+  port: 3306
