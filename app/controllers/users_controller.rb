@@ -13,7 +13,13 @@ class UsersController < ApplicationController
   end
 
   def login
-    User.authenticate(params[:email], params[:password]) ? render_json_success : render_json_errors
+    action_user = User.find_via_email(params[:email])
+    return render_json_errors if action_user.blank? || !action_user.authenticate(params[:password])
+
+    set_cookie_by_key('CURRY_UID', action_user.id)
+    set_cookie_by_key('CURRY_UNAME', action_user.first_name)
+
+    render_json_success
   end
 
   def logout

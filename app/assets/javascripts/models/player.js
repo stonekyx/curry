@@ -40,16 +40,6 @@
       [0,28], [1,28], [1,29], [2,29], [2,30], [3,30], [3,31], [4,31], [5,31], [6,31], [7,31], [8,31], [9,31], [8,31], [7,31], [6,31], [5,31], [4,31], [3,31], [3,32], [2,32], [2,33], [1,33], [1,34], [0,34]
     ],
 
-    _attachEvents: function() {
-      Curry.Utils.EventManager.bind(Curry.Events.Views.Home.GAMEOVER, this._onGameOver, this);
-    },
-
-    _onGameOver: function() {
-      // TODO: stone, make some ending effect that is more meaningful.
-      alert("おめでとう！");
-      // this._vanish();
-    },
-
     attributesMap: [
       { classPrefix: 'figure' },
       { className:   'figure-default' },

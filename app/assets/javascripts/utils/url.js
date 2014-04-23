@@ -11,6 +11,14 @@
       return window.location;
     },
 
+    getHref: function() {
+      return window.location.href;
+    },
+
+    getOrigin: function() {
+      return window.location.origin;
+    },
+
     getProtocal: function() {
       return window.location.protocal;
     },
@@ -19,12 +27,8 @@
       return window.location.host;
     },
 
-    getOrigin: function() {
-      return window.location.origin;
-    },
-
-    getHref: function() {
-      return window.location.href;
+    getPathname: function() {
+      return window.location.pathname;
     },
 
     /* Load Page */

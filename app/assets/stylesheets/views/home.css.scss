@@ -23,16 +23,16 @@
           border-radius: $border-radius;
         }
         .figure-up {
-          @include game-sprite('figure-up');
+          @include masterhead-sprite('figure-up');
         }
         .figure-right {
-          @include game-sprite('figure-right');
+          @include masterhead-sprite('figure-right');
         }
         .figure-down, .figure-default {
-          @include game-sprite('figure-down');
+          @include masterhead-sprite('figure-down');
         }
         .figure-left {
-          @include game-sprite('figure-left');
+          @include masterhead-sprite('figure-left');
         }
       }
     }

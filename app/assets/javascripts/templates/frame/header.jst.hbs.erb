@@ -1,22 +1,56 @@
 <div id='banner-container'>
-  <div class='navbar navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <a class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-      </a>
-      <a class='brand'>Curry</a>
-      <div id='browse-menu' class='nav-collapse'>
-        <ul class='nav'>
-          <li><a href='javascript:void(0)'>Browse Project</a></li>
-          <li><a href='javascript:void(0)'>Contact Us</a></li>
-        </ul>
+  <div class='navigator fixed-top'>
+    <div class='navigation-menu-list'>
+      <div class='logo-section'>
+        <div class='logo'></div>
       </div>
-      <div id='user-menu' class='nav-collapse'>
-        <ul class='nav pull-right'>
-          <li><a id='login-text' class='login' href='javascript:void(0)'>LOGIN</a></li>
-        </ul>
+
+      <div class='item' link-for='/'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='home-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.home'}}</div>
+        </div>
+      </div>
+
+      <div class='item' link-for='/profile'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='profile-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.profile'}}</div>
+        </div>
+      </div>
+
+      <div class='item' link-for='/dashboard'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='management-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.management'}}</div>
+        </div>
+      </div>
+
+      <div class='item' link-for='/contact'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='contact-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.contact'}}</div>
+        </div>
+      </div>
+
+      <div class='item pull-right login'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='login-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.login'}}</div>
+        </div>
+      </div>
+
+      <div class='item pull-right logout'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='logout-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.logout'}}</div>
+        </div>
       </div>
     </div>
   </div>

@@ -33,6 +33,14 @@
 
     run: function() {
       Backbone.history.start({ pushState: true });
+    },
+
+    navigate: function(pathname) {
+      if (Curry.Utils.isBlank(pathname)) {
+        pathname = '/';
+      }
+
+      Curry.Utils.Url.load(Curry.Utils.Url.getOrigin() + pathname);
     }
   };
 }).call(this, jQuery);

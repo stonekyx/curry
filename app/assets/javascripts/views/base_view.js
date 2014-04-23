@@ -43,7 +43,7 @@
     // Internal render method for subclass to override to implement different features.
     renderInternal: function() {},
 
-    // Before render method for subclass to override to prepare data.
+    // Before render method for subclass to override to prepare data and attach events.
     beforeRender: function() {},
 
     render: function() {

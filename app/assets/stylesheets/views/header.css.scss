@@ -1,0 +1,74 @@
+// Place all the styles related to the Shared Header here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header-container {
+  padding: 0 $page-border-width;
+  #banner-container {
+    .navigator {
+      max-width: $page-max-width;
+      background-color: $header-background;
+      padding: $page-container-vertical-padding $page-container-horizontal-padding;
+      .fixed-top {
+        top: 0;
+        position: fixed;
+      }
+      .navigation-menu-list {
+        .logo-section {
+          display: inline-block;
+          padding: 0 10px;
+          vertical-align: top;
+        }
+        .item {
+          display: inline-block;
+          padding: 20px 0 0 10px;
+          opacity: $show-opacity;
+          cursor: pointer;
+          &:hover, &.anchor {
+            opacity: 1;
+          }
+          .item-line {
+            height: 20px;
+            background-color: $white;
+          }
+          &.anchor {
+            .item-line {
+              background-color: $blue-d;
+            }
+          }
+          .item-content {
+            text-align: center;
+            div[class$='-icon'] {
+              display: inline-block;
+              margin: 5px 20px;
+            }
+            .item-text {
+              color: $white;
+            }
+          }
+        }
+      }
+      .logo {
+        @include logo-sprite('logo_character_150');
+      }
+      .home-icon {
+        @include icon-sprite('home');
+      }
+      .profile-icon {
+        @include icon-sprite('profile');
+      }
+      .management-icon {
+        @include icon-sprite('management');
+      }
+      .contact-icon {
+        @include icon-sprite('contact');
+      }
+      .login-icon {
+        @include icon-sprite('login');
+      }
+      .logout-icon {
+        @include icon-sprite('logout');
+      }
+    }
+  }
+}

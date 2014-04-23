@@ -5,3 +5,8 @@ CURRY_UID:
 # The user.first_name in users tab
 CURRY_UNAME:
   name: _curry_uname
+
+# Test cookie
+CURRY_YMD:
+  name: _curry_ymd
+  expires_in: 1mo

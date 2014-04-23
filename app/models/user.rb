@@ -30,13 +30,6 @@ class User < Dove::Base
     set_attr.call(User.get_data_fields(:READ_FIELD), hash)
   end
 
-  def self.authenticate(email, password)
-    action_user = find_via_email(email)
-    return false if action_user.blank?
-
-    action_user.password_matches?(password)
-  end
-
   def self.find_via_id id
     User.find(:first, :conditions => {:id => id})
   end
@@ -47,6 +40,10 @@ class User < Dove::Base
 
   def save_myself
     self.save
+  end
+
+  def authenticate password
+    self.password_matches?(password)
   end
 
   def password_matches? password

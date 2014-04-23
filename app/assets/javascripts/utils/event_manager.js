@@ -77,8 +77,8 @@
       }
 
       var records = this.pool[this._getEventId(observer)];
-      if (Curry.Utils.isBlank(records.evt)) {
-        records.evt = method;
+      if (Curry.Utils.isBlank(records[evt])) {
+        records[evt] = method;
       }
     },
 
@@ -89,7 +89,7 @@
       if (!this.pool[this._getEventId(observer)]) return;
 
       var records = this.pool[this._getEventId(observer)];
-      delete records.evt;
+      delete records[evt];
     },
 
     /*
@@ -99,7 +99,7 @@
       if (!this.pool[this._getEventId(observer)]) return false;
 
       var records = this.pool[this._getEventId(observer)];
-      return !Curry.Utils.isBlank(records.evt);
+      return !Curry.Utils.isBlank(records[evt]);
     },
 
     /*

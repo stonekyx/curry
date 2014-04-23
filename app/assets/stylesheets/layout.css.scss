@@ -1,6 +1,7 @@
 /* main layout */
 
 body {
+  font-size: $medium-font-size;
   background-color: $body-background;
   #wrap {
     max-width: $page-max-width + 2 * $page-border-width;
@@ -48,7 +49,7 @@ body {
         height: 100%;
         top: 0;
         left: 0;
-        opacity: 0.6;
+        opacity: $show-opacity;
       }
     }
     .curry-border {

@@ -1,3 +1,8 @@
+$logo-sprite-dimensions: true;
+$logo-layout: smart;
+$logo-spacing: 2px;
+@import "common/logo/*.png"; /* logo */
+
 $repeat-x-sprite-dimensions: true;
 $repeat-x-layout: vertical;
 $repeat-x-spacing: 2px;
@@ -8,12 +13,17 @@ $repeat-y-layout: horizontal;
 $repeat-y-spacing: 2px;
 @import "common/repeat-y/*.png"; /* repeat-y */
 
+$icon-sprite-dimensions: true;
+$icon-layout: smart;
+$icon-spacing: 2px;
+@import "common/icon/*.png"; /* icon */
+
 $mark-sprite-dimensions: true;
 $mark-layout: vertical;
 $mark-spacing: 2px;
 @import "common/mark/*.png"; /* mark */
 
-$game-sprite-dimensions: true;
-$game-layout: smart;
-$game-spacing: 2px;
-@import "game/*.png"; /* game */
+$masterhead-sprite-dimensions: true;
+$masterhead-layout: smart;
+$masterhead-spacing: 2px;
+@import "masterhead/*.png"; /* masterhead */

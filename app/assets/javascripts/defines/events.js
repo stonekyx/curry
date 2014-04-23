@@ -5,6 +5,10 @@ Curry.Events = {
 
   Views: {
     BEFORE_SWAP: 'BEFORE-SWAP',
+    Header: {
+      LOGGEDIN: 'LOGGED-IN',
+      LOGGEDOUT: 'LOGGED-OUT'
+    },
     Home: {
       GAMEOVER: 'GAME-OVER',
     }

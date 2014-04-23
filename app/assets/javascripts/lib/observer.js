@@ -25,7 +25,16 @@
      */
     getUserId: function() {
       var uid = Cookies.getCookieByKey('CURRY_UID');
-      return uid ? parseInt(uid) : -1;
+      return Curry.Utils.isBlank(uid) ? -1 : parseInt(uid);
+    },
+
+    /*
+     * Get username of user from cookies
+     * @return {String}
+     */
+    getUserName: function() {
+      var uname = Cookies.getCookieByKey('CURRY_UNAME') || '';
+      return uname;
     },
 
     /*

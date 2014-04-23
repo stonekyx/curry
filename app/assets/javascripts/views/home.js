@@ -10,7 +10,7 @@
     events: {
       //TODO: zanwen, should add <span> to toggle game start & end.
       'click #map': '_onGameStart',
-      'blur #map': '_onGameEnd',
+      'blur #map': '_onGameFail',
       'keydown #map': '_onEnterDirection',
       'keyup #map': '_onLoseDirection'
     },
@@ -20,6 +20,8 @@
       this.game.player = this._models['user'][0];
       this.developer   = this._models['user'][1];
       this.manager     = this._models['user'][2];
+
+      Curry.Utils.EventManager.bind(Curry.Events.Views.Home.GAMEOVER, this._onGameOver, this);
     },
     renderInternal: function() {
       if (this.game && this.game.player) {
@@ -59,10 +61,15 @@
       };
       this.game.timer = setInterval(drawStuffs, Curry.Constants.GAME.REFRESHINTERVAL);
     },
-    _onGameEnd: function(evnet) {
+    _onGameFail: function(evnet) {
       this._container.find('#map').removeAttr('tabindex');
       this.game.running = false;
       clearInterval(this.game.timer);
+    },
+    _onGameOver: function() {
+      // TODO: stone, make some ending effect that is more meaningful.
+      alert("おめでとう！");
+      // this._vanish();
     },
     _onEnterDirection: function(event) {
       // Only one of 'W', 'A', 'S', 'D' can be pressed anytime.

@@ -1,4 +1,6 @@
 module Authentication
+  SESSION_AGE = 3.year
+
   def store_user
   end
 

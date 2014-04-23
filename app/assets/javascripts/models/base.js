@@ -11,9 +11,6 @@
     // The readOnly is used to mark whether the model can be modified.
     readOnly: true,
 
-    // AttachEvents for subclass to override to bind specific evnets.
-    _attachEvents: function() {},
-
     /* The attributesMap is the map of a model.
      * 1. For readonly models:     it is used to define how to map the json response to the model attributes.
      * 2. For non-readonly models: it is used to define attributes the model should contain.
@@ -34,8 +31,6 @@
         var jsonVal = attributes[Curry.Utils.Str.decamelize(modelAttr, '_')];
         this[modelAttr] = Curry.Utils.isBlank(jsonVal) ? defaultVal : jsonVal;
       }
-
-      this._attachEvents();
     }
   });
 }).call(this, jQuery);

@@ -32,7 +32,7 @@
         data: this.form.serialize()
       }).done(function(response) {
         if (response['success']) {
-          alert("AUTHENTICATED SUCCEEDED");
+          Curry.Events.COLLECTION.trigger(Curry.Events.Views.Header.LOGGEDIN);
           Curry.Utils.Url.reload();
         } else {
           alert("WHO ARE YOU...")

@@ -1,6 +1,13 @@
 en-us:
   js:
     Common:
+      Icons:
+        home: "Home"
+        profile: "Profile"
+        management: "Projects"
+        contact: "Contact Us"
+        login: "Login"
+        logout: "Logout"
       Button:
         cancel: "Cancel"
         submit: "Submit"
