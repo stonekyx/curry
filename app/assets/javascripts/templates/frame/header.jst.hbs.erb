@@ -12,7 +12,7 @@
           <div class='item-text'>{{I18nt 'Common.Icons.home'}}</div>
         </div>
       </div>
-
+      {{#if isLoggedIn}}
       <div class='item' link-for='/profile'>
         <div class='item-line'></div>
         <div class='item-content'>
@@ -37,11 +37,11 @@
         </div>
       </div>
 
-      <div class='item pull-right login'>
+      <div class='item' link-for='/message'>
         <div class='item-line'></div>
         <div class='item-content'>
-          <div class='login-icon'></div>
-          <div class='item-text'>{{I18nt 'Common.Icons.login'}}</div>
+          <div class='message-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.message'}}</div>
         </div>
       </div>
 
@@ -52,6 +52,23 @@
           <div class='item-text'>{{I18nt 'Common.Icons.logout'}}</div>
         </div>
       </div>
+      {{else}}
+      <div class='item' link-for='/signup'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='signup-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.signup'}}</div>
+        </div>
+      </div>
+
+      <div class='item pull-right login'>
+        <div class='item-line'></div>
+        <div class='item-content'>
+          <div class='login-icon'></div>
+          <div class='item-text'>{{I18nt 'Common.Icons.login'}}</div>
+        </div>
+      </div>
+      {{/if}}
     </div>
   </div>
 </div>

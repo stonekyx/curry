@@ -35,19 +35,6 @@
     getUserName: function() {
       var uname = Cookies.getCookieByKey('CURRY_UNAME') || '';
       return uname;
-    },
-
-    /*
-     * Get group id from cookies
-     * @return {Number}
-     * group_id:
-     *    1 means only for anonymous user,
-     *    2 means only for devloper,
-     *    4 means only for project manager
-     *    (should move commets for group_id to cookies file)
-     */
-    getGroupId: function() {
-      return 1;
     }
   };
 }).call(this, jQuery);

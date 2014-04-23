@@ -3,9 +3,11 @@ en-us:
     Common:
       Icons:
         home: "Home"
+        signup: "Signup"
         profile: "Profile"
         management: "Projects"
-        contact: "Contact Us"
+        contact: "Contacts"
+        message: "Messages"
         login: "Login"
         logout: "Logout"
       Button:

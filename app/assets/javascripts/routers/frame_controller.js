@@ -16,7 +16,8 @@
       _.each(this._frameList, function(fragment) {
         var frameViewClass = Curry.Views[Curry.Utils.Str.capitalize(fragment)];
         if (frameViewClass) {
-          var frameView = new frameViewClass({template: self._templatePrefix + fragment, context: self.contextKey});
+          //TODO: zacky, better to abstract core model here.
+          var frameView = new frameViewClass({template: self._templatePrefix + fragment, context: self.contextKey, models: {coreModel: {isLoggedIn: Curry.Helpers.Observer.isLoggedIn()}}});
           $('#'+fragment+'-container').empty().append(frameView.render().el);
         }
       });

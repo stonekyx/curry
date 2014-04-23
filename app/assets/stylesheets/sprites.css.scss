@@ -23,7 +23,7 @@ $mark-layout: vertical;
 $mark-spacing: 2px;
 @import "common/mark/*.png"; /* mark */
 
-$masterhead-sprite-dimensions: true;
-$masterhead-layout: smart;
-$masterhead-spacing: 2px;
-@import "masterhead/*.png"; /* masterhead */
+$masterview-sprite-dimensions: true;
+$masterview-layout: smart;
+$masterview-spacing: 2px;
+@import "masterview/*.png"; /* masterview */

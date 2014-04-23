@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
   #protect_from_forgery
-  include Authentication
 
   before_filter :set_locale
   before_filter :prepare_cookies
+
+  include Authentication
 
   def prepare_cookies
     cookies = self.request.cookie_jar || {}
@@ -18,12 +19,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_cookie_by_key(key, value)
-    return false if value.blank?
-
     config = Cookies.get_config_by_key(key).dup
     cookie = {:value => value.to_s, :path => config[:path], :httponly => config[:httponly]}
 
-    cookie[:expires_in] = Time.now + config[:expires_in]
+    cookie[:expires] = value.blank? ? 1.year.ago : Time.now + config[:expires_in]
     cookie[:secure] =  true if config[:secure] && request.ssl?
     cookie[:domain] = COOKIE_DOMAIN if config[:use_domain]
 

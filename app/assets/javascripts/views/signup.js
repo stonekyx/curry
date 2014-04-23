@@ -29,6 +29,7 @@
         data: this.form.serialize()
       }).done(function(response) {
         alert("SIGNUP SUCCESS");
+        //TODO: zacky, should direct to '/thanks' page.
         Curry.Utils.Url.reload();
       }).fail(function(response) {
         alert("YAMIEDIE");

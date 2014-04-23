@@ -18,23 +18,8 @@
       return this.swap(new Curry.Views.Home({template: this._template, context: contextKey, models: this.pageModels}));
     },
 
-    _retrieveModelByKey: function(key) {
-      var tempModel = null;
-      if (key == 0) {
-        tempModel = new Curry.Models.GamePlayer({class_prefix: 'figure'});
-      }
-
-      return tempModel;
-    },
-
     _generatePageModels: function(configs) {
-      this.pageModels['accessKey'] = configs.accessKey;
-      this.pageModels['user'] = {};
-      for (var i=0; i<Curry.Constants.GROUPNUMBER; i++) {
-        if (this.pageModels.accessKey & 1 << i) {
-          this.pageModels['user'][i] = this._retrieveModelByKey(i);
-        }
-      }
+      this.pageModels['player'] = new Curry.Models.GamePlayer({class_prefix: 'figure'});
 
       return this.pageModels;
     },

@@ -2,7 +2,9 @@
   Curry.Controls.Popup.Login = Curry.Controls.Popup.extend({
     events: _.extend({
       'click #cancel-btn': '_onClickCancel',
-      'click #submit-btn': '_onClickLogin'
+      'click #submit-btn': '_onClickLogin',
+      'keypress input#user-email': '_onInputEnter',
+      'keypress input#user-password': '_onInputEnter'
     }, Curry.Views.BaseView.prototype.events),
 
     _init: function() {
@@ -32,17 +34,22 @@
         data: this.form.serialize()
       }).done(function(response) {
         if (response['success']) {
+          self._onClickCancel();
           Curry.Events.COLLECTION.trigger(Curry.Events.Views.Header.LOGGEDIN);
-          Curry.Utils.Url.reload();
         } else {
           alert("WHO ARE YOU...")
         }
-        self._onClickCancel();
       }).fail(function(response) {
         alert("YAMIEDIE");
       });
 
       return true;
+    },
+
+    _onInputEnter: function(evt) {
+      if (evt.which == Curry.Constants.KEYCODES.ENTER) {
+        this._onClickLogin();
+      }
     }
   });
 

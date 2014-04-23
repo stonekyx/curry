@@ -38,7 +38,7 @@ class Cookies
     def get_all_configs
       configs = {}
       COOKIES.each do |key, value|
-        configs[key] = value
+        configs[key] = get_config_by_key(key)
       end
 
       configs

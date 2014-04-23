@@ -54,6 +54,9 @@
       .home-icon {
         @include icon-sprite('home');
       }
+      .signup-icon {
+        @include icon-sprite('signup');
+      }
       .profile-icon {
         @include icon-sprite('profile');
       }
@@ -62,6 +65,9 @@
       }
       .contact-icon {
         @include icon-sprite('contact');
+      }
+      .message-icon {
+        @include icon-sprite('message');
       }
       .login-icon {
         @include icon-sprite('login');

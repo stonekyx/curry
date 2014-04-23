@@ -17,13 +17,6 @@
     },
 
     renderInternal: function() {
-      if (Curry.Helpers.Observer.isLoggedIn()) {
-        this._container.find('.logout').show();
-        this._container.find('.login').hide();
-      } else {
-        this._container.find('.login').show();
-        this._container.find('.logout').hide();
-      }
       this._locateAnchor();
     },
 
@@ -32,7 +25,15 @@
     },
 
     _onClickLogout: function() {
-      Curry.Events.COLLECTION.trigger(Curry.Events.Views.Header.LOGGEDOUT);
+      Curry.Helpers.JsonResponser.post({
+        url: Curry.Constants.URL.API.LOGOUT
+      }).done(function(response) {
+        if (response['success']) {
+          Curry.Events.COLLECTION.trigger(Curry.Events.Views.Header.LOGGEDOUT);
+        }
+      }).fail(function(response) {
+        alert("YAMIEDIE");
+      });
     },
 
     _onClickItem: function(evt) {
@@ -47,10 +48,11 @@
     _onUserLoggedIn: function() {
       var userName = Curry.Helpers.Observer.getUserName();
       //TODO: zacky, need further design to show username.
+
+      Curry.Utils.Url.reload();
     },
 
     _onUserLoggedOut: function() {
-      Cookies.eraseUserCookies();
       Curry.navigate('/');
     },
 

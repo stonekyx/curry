@@ -27,9 +27,7 @@
 
     /* Page Data Functions */
 
-    _generatePageConfigs: function(context) {
-      this.pageConfigs.accessKey = Curry.Helpers.Observer.getGroupId();
-    },
+    _generatePageConfigs: function(context) {},
 
     _checkValid: function() {
       return !Curry.Utils.isBlank(this.router);

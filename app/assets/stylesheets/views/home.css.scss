@@ -23,16 +23,16 @@
           border-radius: $border-radius;
         }
         .figure-up {
-          @include masterhead-sprite('figure-up');
+          @include masterview-sprite('figure-up');
         }
         .figure-right {
-          @include masterhead-sprite('figure-right');
+          @include masterview-sprite('figure-right');
         }
         .figure-down, .figure-default {
-          @include masterhead-sprite('figure-down');
+          @include masterview-sprite('figure-down');
         }
         .figure-left {
-          @include masterhead-sprite('figure-left');
+          @include masterview-sprite('figure-left');
         }
       }
     }

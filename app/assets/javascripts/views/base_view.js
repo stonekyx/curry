@@ -21,7 +21,7 @@
       this._super('initialize', options);
       this._template = options.template;
       this._context  = options.context;
-      this._models   = options.models;
+      this._models   = options.models || {};
     },
 
     /* Rendering Functions */
@@ -36,7 +36,7 @@
         //TODO: zanwen, should throw exceptions here.
       }
       $(this.el).attr('id', 'main');
-      $(this.el).html(this.renderTemplate(this._template));
+      $(this.el).html(this.renderTemplate(this._template, this._models.coreModel));
       this._container = $(this.el).find('#' + this._context + '-container');
     },
 
@@ -70,7 +70,11 @@
       if (Curry.Utils.isBlank(this.form) || this.form.length == 0) return false;
 
       var inputs = this.form.find('input, textarea').not('[type=hidden], .optional');
-      for (var i=0; i<inputs.length; i++) {
+      var len = inputs.length;
+      if (this.form.furthestProgress < len-1) {
+        Curry.Utils.Form.advanceFieldProgress(inputs[len-1].name, this.form);
+      }
+      for (var i=0; i<len; i++) {
         if (this.form.fieldsStatus[i] != true) return false;
       }
 

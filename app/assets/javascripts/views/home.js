@@ -17,9 +17,7 @@
 
     beforeRender: function() {
       this.game = {};
-      this.game.player = this._models['user'][0];
-      this.developer   = this._models['user'][1];
-      this.manager     = this._models['user'][2];
+      this.game.player = this._models.player;
 
       Curry.Utils.EventManager.bind(Curry.Events.Views.Home.GAMEOVER, this._onGameOver, this);
     },
