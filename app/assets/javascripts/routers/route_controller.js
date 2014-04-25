@@ -68,10 +68,13 @@
 
     // Retrieve frame beforehand, like header & footer.
     _retrieveFrame: function() {
-      var frameRouter = new Curry.Routers.FrameController(this);
-      var callback    = frameRouter['index'];
+      var headerRouter = new Curry.Routers.HeaderController(this);
+      var callback = headerRouter['index'];
+      callback.apply(headerRouter);
 
-      callback.apply(frameRouter);
+      var footerRouter = new Curry.Routers.FooterController(this);
+      var callback = footerRouter['index'];
+      callback.apply(footerRouter);
     },
 
     // Swap to the new view.

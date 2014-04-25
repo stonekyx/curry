@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  include UserAction
+class UserController < ApplicationController
   before_filter :post_only, :only => [:signup, :login, :logout]
 
   def index
@@ -9,7 +8,7 @@ class UsersController < ApplicationController
   def signup
     sub_params = clean_params(params)
     @user = User.new sub_params
-    @user.save_myself ? render_json_success : render_json_errors
+    @user.save_itself ? render_json_success : render_json_errors
   end
 
   def login

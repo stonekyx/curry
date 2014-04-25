@@ -3,4 +3,10 @@ en-us:
     Signup:
       form_title: "Tell us About You..."
       form_title_optional: "Fill the Info if you like"
+    Message:
+      form_title: "Select Type of Message"
+      project_description:
+      - "Give Me the Description of Your Project"
+      - "Which Part Would You Like to Play"
+      - "Please Add Your Comments"
 

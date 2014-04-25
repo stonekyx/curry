@@ -2,12 +2,6 @@ en-us:
   js:
     Errors:
       Inputs:
-        first_name:
-        -
-        - "Please Enter Your First Name"
-        last_name:
-        -
-        - "Please Enter Your Last Name"
         email:
         -
         - "Please Enter Your Email Address"
@@ -17,3 +11,15 @@ en-us:
         - "Please Enter Your Password"
         - "Please Confirm Your Password"
         - "Passwords don't match"
+        first_name:
+        -
+        - "Please Enter Your First Name"
+        last_name:
+        -
+        - "Please Enter Your Last Name"
+        project_name:
+        -
+        - "Please Enter Project Name"
+        description:
+        -
+        - "Please Write Down Your Description"

@@ -18,10 +18,18 @@
           padding: 10px;
         }
 
-        input {
+        input, textarea {
           font-size: $medium-font-size;
           padding: 9px;
           margin-bottom: 0px;
+        }
+        input[type=radio] {
+          display: inline-block;
+          vertical-align: top;
+        }
+        textarea {
+          max-width: 500px;
+          max-height: 100px;
         }
       }
       .message {

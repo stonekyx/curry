@@ -1,0 +1,70 @@
+<div id='contact-container'>
+  <div class='contact-content'>
+    <div class='form-container'>
+      <form method='post' id='message-form' accept-charset='UTF-8'>
+        <div class='form-title'>{{I18nt 'Message.form_title'}}</div>
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <label class='input-box btn btn-large btn-inverse'>
+              <input type='radio' id='create-project' name='message_type' value='0'>
+              {{I18nt 'Common.Radio.create'}}
+            </label>
+          </div>
+
+          <div class='input-row'>
+            <label class='input-box btn btn-large btn-info'>
+              <input type='radio' id='join-project' name='message_type' value='1'>
+              {{I18nt 'Common.Radio.join'}}
+            </label>
+          </div>
+
+          <div class='input-row'>
+            <label class='input-box btn btn-large'>
+              <input type='radio' id='comment-project' name='message_type' value='2' checked>
+              {{I18nt 'Common.Radio.comment'}}
+            </label>
+          </div>
+        </div>
+
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <div class='input-box'>
+              <input type='text' id='email-from' class='full-width' name='email_from' maxlength='50'>
+            </div>
+            <div class='message'></div>
+          </div>
+
+          <div class='input-row'>
+            <div class='input-box'>
+              <input type='text' id='email-to' class='full-width' name='email_to' maxlength='50'>
+            </div>
+            <div class='message'></div>
+          </div>
+        </div>
+
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <div class='input-box'>
+              <input type='text' id='project-name' class='full-width' name='project_name' maxlength='50'>
+            </div>
+            <div class='message'></div>
+          </div>
+        </div>
+
+        <div class='form-title description-title'></div>
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <div class='input-box'>
+              <textarea type='text' id='description' class='full-width' name='description' maxlength='50'></textarea>
+            </div>
+            <div class='message'></div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class='button-container'>
+      <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.send'}}</div>
+    </div>
+  </div>
+</div>

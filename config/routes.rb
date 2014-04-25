@@ -56,13 +56,16 @@ Curry::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   # API
-  match 'api/users/signup' => 'users#signup'
-  match 'api/users/login'  => 'users#login'
-  match 'api/users/logout' => 'users#logout'
+  match 'api/user/signup' => 'user#signup'
+  match 'api/user/login'  => 'user#login'
+  match 'api/user/logout' => 'user#logout'
+  match 'api/message/send_message' => 'message#create'
+  match 'api/message/browse_message' => 'message#browse'
 
-  match 'api/account/user_info' => 'account#user_info'
+  match 'api/profile/user_info' => 'profile#user_info'
 
   # PAGE
-  match 'signup' => 'users#index'
+  match 'signup' => 'user#index'
+  match 'contact' => 'message#index'
   root :to => 'home#index'
 end

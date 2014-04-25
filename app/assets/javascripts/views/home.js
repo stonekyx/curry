@@ -1,6 +1,6 @@
 (function($) {
   /**
-   * @class: HomeView implemets the page logic of home page.
+   * @class: HomeView implements the page logic of home page.
    */
   Curry.Views.Home = Curry.Views.BaseView.extend({
     //NOTE: _container points to div#container in js template home/game

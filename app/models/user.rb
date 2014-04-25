@@ -8,27 +8,17 @@ class User < Dove::Base
     :salt,
     :first_name,
     :last_name,
-    :joined_at
+    :joined_at,
+    :address
   ])
 
   define_data_fields(:WRITE_FIELD, [
     :email,
     :password,
     :first_name,
-    :last_name
+    :last_name,
+    :address
   ])
-
-  def initialize(raw_hash={})
-    super
-
-    hash = update_hash_to_save(raw_hash)
-    set_attr = lambda do |fields, hash|
-      fields.each do |key|
-        write_attribute(key, hash[key])
-      end
-    end
-    set_attr.call(User.get_data_fields(:READ_FIELD), hash)
-  end
 
   def self.find_via_id id
     User.find(:first, :conditions => {:id => id})
@@ -36,10 +26,6 @@ class User < Dove::Base
 
   def self.find_via_email email
     User.find(:first, :conditions => {:email => email})
-  end
-
-  def save_myself
-    self.save
   end
 
   def authenticate password

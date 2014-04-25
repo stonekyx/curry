@@ -19,6 +19,7 @@
     },
 
     _generatePageModels: function(configs) {
+      this.pageModels = {};
       this.pageModels['player'] = new Curry.Models.GamePlayer({class_prefix: 'figure'});
 
       return this.pageModels;

@@ -1,6 +1,6 @@
 (function($) {
   /**
-   * @class: HeaderView implemets the header logic of all pages.
+   * @class: HeaderView implements the header logic of all pages.
    */
   Curry.Views.Header = Curry.Views.BaseView.extend({
     name: 'header',
@@ -47,7 +47,7 @@
 
     _onUserLoggedIn: function() {
       var userName = Curry.Helpers.Observer.getUserName();
-      //TODO: zacky, need further design to show username.
+      //TODO: zacky, need add avatar logic here.
 
       Curry.Utils.Url.reload();
     },

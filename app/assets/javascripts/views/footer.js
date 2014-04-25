@@ -1,6 +1,6 @@
 (function($) {
   /**
-   * @class: FooterView implemets the footer logic of all pages.
+   * @class: FooterView implements the footer logic of all pages.
    */
   Curry.Views.Footer = Curry.Views.BaseView.extend({
     name: 'footer',

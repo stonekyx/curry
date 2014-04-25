@@ -42,10 +42,17 @@
               display: inline-block;
               margin: 5px 20px;
             }
-            .item-text {
-              color: $white;
-            }
           }
+        }
+        .avatar {
+          background-color: $black;
+          opacity: $show-opacity;
+          margin-right: 30px;
+          padding: 15px 50px;
+          text-align: center;
+        }
+        .item-text {
+          color: $white;
         }
       }
       .logo {
@@ -74,6 +81,12 @@
       }
       .logout-icon {
         @include icon-sprite('logout');
+      }
+      .user-avatar {
+        &.default {
+          background-color: $white;
+          @include icon-sprite('default-avatar');
+        }
       }
     }
   }

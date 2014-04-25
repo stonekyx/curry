@@ -5,7 +5,7 @@ module Authentication
     return unless @user && @user.id
 
     set_cookie_by_key('CURRY_UID', @user.id)
-    set_cookie_by_key('CURRY_UNAME', @user.first_name)
+    set_cookie_by_key('CURRY_UNAME', @user.first_name.downcase)
 
     reset_session
     session[:user_id] = @user.id

@@ -10,7 +10,12 @@ en-us:
         message: "Messages"
         login: "Login"
         logout: "Logout"
+      Radio:
+        create: "Create Project"
+        join: "Ask For Taking a Part"
+        comment: "Publish Statement"
       Button:
         cancel: "Cancel"
         submit: "Submit"
+        send:   "Send Message"
         login:  "Login"

@@ -1,4 +1,4 @@
-class AccountController < ApplicationController
+class ProfileController < ApplicationController
   before_filter :prepare_user, :only => [:user_info]
 
   def user_info

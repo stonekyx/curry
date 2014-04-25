@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :prepare_cookies
 
   include Authentication
+  include ParamsAction
 
   def prepare_cookies
     cookies = self.request.cookie_jar || {}

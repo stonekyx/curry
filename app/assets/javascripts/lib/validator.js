@@ -1,4 +1,4 @@
-(function($){
+(function($) {
   /**
    * @namespace Validator Helpers
    */
@@ -6,7 +6,7 @@
     /*
      * Fields names to validate.
      */
-    watchList: ['email', 'password', 'password_confirmation', 'first_name', 'last_name'],
+    watchList: ['email', 'email_from', 'email_to', 'password', 'password_confirmation', 'first_name', 'last_name', 'project_name', 'description'],
 
     /*
      * Validate router.
@@ -19,7 +19,7 @@
 
       var code = 0;
       switch (fieldName) {
-        case 'email':
+        case 'email': case 'email_from': case 'email_to':
           code = this.watchEmail(value);
           break;
         case 'password':

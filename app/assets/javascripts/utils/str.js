@@ -3,7 +3,7 @@
    * @namespace String Utils
    */
   Curry.Utils.Str = {
-    /**
+    /*
      * Removes whitespace from the front and the end of the specified string.
      * @param {string} stringToTrim The input String whose beginning and ending whitespace will be removed
      * @returns {string}  A String with whitespace removed from the begining and end
@@ -12,7 +12,7 @@
       return stringToTrim.replace(/^\s+|\s+$/g,"");
     },
 
-    /**
+    /*
      * Removes whitespace from the front of the specified string.
      * @param {string} stringToTrim The input String whose beginning whitespace will be removed
      * @returns {string}  A String with whitespace removed from the begining
@@ -21,7 +21,7 @@
       return stringToTrim.replace(/^\s+/,"");
     },
 
-    /**
+    /*
      * Removes whitespace from the end of the specified string.
      * @param {string} stringToTrim The input String whose ending whitespace will be removed
      * @returns {string}  A String with whitespace removed from the end
@@ -30,7 +30,7 @@
       return stringToTrim.replace(/\s+$/,"");
     },
 
-    /**
+    /*
      * Capitalizes the first letter of a string and downcases all the others.
      * @param {String} s string to be evaluated
      * @return {String} The result string
@@ -50,7 +50,7 @@
       });
     },
 
-    /**
+    /*
      * Camelize a non-camel style string into a camel style string. i.e.: TEST_STRING => testString
      * @param {string} str Non-camel style string to camelize
      * @param {boolean} [firstCapitalize=false] whether upcase first letter
@@ -61,7 +61,7 @@
       });
     },
 
-    /**
+    /*
      * De-camelize a camel style string into a normal string with lower case words. i.e.: testString => test string
      * @param {string} str Camel style string to de-camelize
      * @param {string} [connector=' '] Character to connect the words, default is white space

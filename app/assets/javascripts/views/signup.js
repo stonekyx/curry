@@ -1,6 +1,6 @@
 (function($) {
   /**
-   * @class: HomeView implemets the page logic of signup page.
+   * @class: HomeView implements the page logic of signup page.
    */
   Curry.Views.Signup = Curry.Views.BaseView.extend({
     name: 'signup',
@@ -28,11 +28,12 @@
         url: Curry.Constants.URL.API.SIGNUP,
         data: this.form.serialize()
       }).done(function(response) {
-        alert("SIGNUP SUCCESS");
+        //TODO: zacky, should show popup wating for response.
+        alert('SIGNUP SUCCESS');
         //TODO: zacky, should direct to '/thanks' page.
         Curry.Utils.Url.reload();
       }).fail(function(response) {
-        alert("YAMIEDIE");
+        alert('YAMIEDIE');
       });
 
       return true;

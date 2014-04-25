@@ -13,6 +13,9 @@
       'focus input': '_onFocusField',
       'input input': '_onInputField',
       'blur input': '_onBlurField',
+      'focus textarea': '_onFocusField',
+      'input textarea': '_onInputField',
+      'blur textarea': '_onBlurField'
     },
 
     /* Page Data Functions */
@@ -69,11 +72,9 @@
     formOverallCheck: function() {
       if (Curry.Utils.isBlank(this.form) || this.form.length == 0) return false;
 
-      var inputs = this.form.find('input, textarea').not('[type=hidden], .optional');
+      var inputs = this.form.find('input, textarea').not('[type=hidden], [type=radio], .optional');
       var len = inputs.length;
-      if (this.form.furthestProgress < len-1) {
-        Curry.Utils.Form.advanceFieldProgress(inputs[len-1].name, this.form);
-      }
+      Curry.Utils.Form.advanceFieldProgress(inputs[len-1].name, this.form);
       for (var i=0; i<len; i++) {
         if (this.form.fieldsStatus[i] != true) return false;
       }
