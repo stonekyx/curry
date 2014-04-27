@@ -9,4 +9,5 @@ en-us:
       - "Give Me the Description of Your Project"
       - "Which Part Would You Like to Play"
       - "Please Add Your Comments"
-
+    Error:
+      message: "There's an error on this page."

@@ -51,7 +51,8 @@
       var self = this;
       Backbone.history.route(route, function(fragment) {
         var args = self._extractParameters(route, fragment);
-        var callbackGuide = self.routes[fragment].split('.');
+        //NOTE: zacky, make sure 'name.split' is correct.
+        var callbackGuide = name.split('.');
         if (callbackGuide && callbackGuide.length == 2) {
           var subRouterClass = Curry.Routers[callbackGuide[0]];
           if (subRouterClass) {

@@ -16,8 +16,9 @@
       'thanks':  'SignupController.thanks',
       'message': 'MessageController.index',
       'contact': 'MessageController.contact',
-      //TODO: zanwen, should verify the regex for ErrorController.
-      '.*': 'ErrorController.error404'
+      //TODO, zacky, need to add logic to handle browser backward action issue.
+      'error': 'ErrorController.error',
+      '*path': 'ErrorController.index'
     }
   });
 }).call(this, jQuery);

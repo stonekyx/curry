@@ -43,8 +43,9 @@
       }
 
       //TODO: zanwen, should handle query params here.
-      var args = Array.prototype.slice.call(arguments).shift();
-      actionCallback.apply(this);
+      var args = Array.prototype.slice.call(arguments);
+      args.shift();
+      actionCallback.apply(this, args);
     },
 
     // Swap to the given view. Should be invoked at the end of actions.

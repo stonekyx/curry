@@ -35,11 +35,13 @@
       Backbone.history.start({ pushState: true });
     },
 
-    navigate: function(pathname) {
+    navigate: function(pathname, options) {
       if (Curry.Utils.isBlank(pathname)) {
         pathname = '/';
       }
 
+      //NOTE: stone, please make sure this is correct and standard.
+      Backbone.history.navigate(pathname, options);
       Curry.Utils.Url.load(Curry.Utils.Url.getOrigin() + pathname);
     }
   };
