@@ -9,8 +9,7 @@
 
     _init: function() {
       this.name  = 'login_box';
-      this.title = I18n.t('Popup.Login.title');
-      this.data  = {};
+      this.title = I18n.t('Popup.Title.login');
     },
 
     renderInternal: function() {
@@ -53,5 +52,24 @@
     }
   });
 
+  Curry.Controls.Popup.ViewMessageDetail = Curry.Controls.Popup.extend({
+    events: _.extend({
+      'click #cancel-btn': '_onClickCancel',
+    }, Curry.Views.BaseView.prototype.events),
+
+    _init: function() {
+      this.name  = 'view_message_detail_box';
+      this.title = I18n.t('Popup.Title.view_message_detail');
+    },
+
+    renderInternal: function() {
+      this._container.find('#header-container .headline').html(this.title);
+      this._container.find('#body-container').html(this.renderTemplate('popup/view_message_detail', this.data));
+    },
+
+    afterRender: function() {}
+  });
+
   Curry.Utils.ElementManager.registerPopup('login', Curry.Controls.Popup.Login);
+  Curry.Utils.ElementManager.registerPopup('view_message_detail', Curry.Controls.Popup.ViewMessageDetail);
 }).call(this, jQuery);

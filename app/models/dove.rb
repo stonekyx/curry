@@ -29,5 +29,10 @@ module Dove
     def save_itself
       self.save
     end
+
+    #NOTE: zacky, skip nil values when to_json on ActiveRecord. See more at, http://stackoverflow.com/questions/7914022/skip-attributes-having-nil-values-when-to-json-on-activerecord
+    def as_json options={}
+      super(options).reject { |k, v| v.nil? }
+    end
   end
 end

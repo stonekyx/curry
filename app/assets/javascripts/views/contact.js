@@ -15,8 +15,8 @@
       this.form = this._container.find('#message-form');
       this.form.furthestProgress = -1;
       this.form.fieldsStatus = [];
-      this.projectDesc = I18n.t('Message.project_description');
-      this.form.find('.description-title').empty().html(this.projectDesc[2]);
+      this.projectDescriptionList = I18n.t('Message.project_description');
+      this.form.find('.description-title').empty().html(this.projectDescriptionList[2]);
     },
 
     afterRender: function() {
@@ -29,7 +29,7 @@
         var idx = evt.target.value;
         var descTitleEl = this.form.find('.description-title');
         descTitleEl.fadeOut('slow', function() {
-          descTitleEl.empty().html(self.projectDesc[idx]).fadeIn('slow');
+          descTitleEl.empty().html(self.projectDescriptionList[idx]).fadeIn('slow');
         });
         Curry.Utils.Form.clearInputs(this.form);
       }

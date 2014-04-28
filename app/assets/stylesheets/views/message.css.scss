@@ -2,14 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#message-container {
+  text-align: center;
+  .message-content {
+    display: inline-block;
+  }
+}
+
 #contact-container {
   .contact-content {
     display: inline-block;
-    .form-container {
-      .form-title {
-        margin-bottom: 20px;
-        font-size: $large-font-size;
-      }
-    }
   }
 }

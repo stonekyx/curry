@@ -1,4 +1,8 @@
 .form-container {
+  .form-title {
+    margin-bottom: 20px;
+    font-size: $large-font-size;
+  }
   .virtual-input-row {
     margin-bottom: 25px;
     .input-row {
@@ -48,5 +52,6 @@
   }
 }
 .button-container {
+  margin-top: 20px;
   float: right;
 }

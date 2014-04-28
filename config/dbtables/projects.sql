@@ -1,10 +1,7 @@
-CREATE TABLE messages
+CREATE TABLE projects
 (
 id int(11) NOT NULL AUTO_INCREMENT,
-sid int(11) NOT NULL,
-rid int(11) NOT NULL,
-send_at datetime NOT NULL,
-genre int(11) NOT NULL,
+mid int(11) NOT NULL,
 project_name varchar(255) NOT NULL,
 description text NOT NULL,
 PRIMARY KEY (id)

@@ -1,64 +1,23 @@
-<div id='signup-container'>
-  <div class='signup-content'>
+<div id='message-container'>
+  <div class='message-content'>
     <div class='form-container'>
-      <form method='post' id='signup-form' accept-charset='UTF-8'>
-        <div class='form-title'>{{I18nt 'Signup.form_title'}}</div>
-        <div class='virtual-input-row'>
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='text' id='first-name' class='full-width' name='first_name' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
-
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='text' id='last-name' class='full-width' name='last_name' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
+      <div class='virtual-input-row pull-right'>
+        <div class='input-row'>
+          <label class='input-box btn btn-large btn-inverse'>
+            <input type='radio' id='inbox' name='browse_type' value='0' checked>
+            {{I18nt 'Common.Radio.inbox'}}
+          </label>
         </div>
 
-        <div class='virtual-input-row'>
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='text' id='email' class='full-width' name='email' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
+        <div class='input-row'>
+          <label class='input-box btn btn-large'>
+            <input type='radio' id='sent-item' name='browse_type' value='1'>
+            {{I18nt 'Common.Radio.sent_item'}}
+          </label>
         </div>
+      </div>
 
-        <div class='virtual-input-row'>
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='password' id='password' class='full-width' name='password' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
-
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='password' id='password-confirmation' class='full-width' name='password_confirmation' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
-        </div>
-        <div class='blank-line'></div>
-
-        <div class='form-title'>{{I18nt 'Signup.form_title_optional'}}</div>
-        <div class='virtual-input-row'>
-          <div class='input-row'>
-            <div class='input-box'>
-              <input type='text' id='address' class='full-width optional' name='address' maxlength='50'>
-            </div>
-            <div class='message'></div>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class='button-container'>
-      <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.submit'}}</div>
+      <div class='message-browser'></div>
     </div>
   </div>
 </div>

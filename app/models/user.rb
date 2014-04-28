@@ -20,12 +20,21 @@ class User < Dove::Base
     :address
   ])
 
+  define_data_fields(:BRIEF_FIELD, [
+    :email,
+    :first_name
+  ])
+
   def self.find_via_id id
-    User.find(:first, :conditions => {:id => id})
+    find(:first, :conditions => {:id => id})
   end
 
   def self.find_via_email email
-    User.find(:first, :conditions => {:email => email})
+    find(:first, :conditions => {:email => email})
+  end
+
+  def self.find_brief_info_via_id id
+    find(:first, :select => get_data_fields(:BRIEF_FIELD).to_a, :conditions => {:id => id})
   end
 
   def authenticate password

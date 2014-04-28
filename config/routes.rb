@@ -67,6 +67,7 @@ Curry::Application.routes.draw do
   # PAGE
   match 'signup' => 'user#index'
   match 'contact' => 'message#index'
+  match 'message' => 'message#index'
   root :to => 'home#index'
 
   match '*not_found' => 'errors#index'

@@ -1,0 +1,13 @@
+.table-container {
+  table {
+    .half-width {
+      min-width: 150px;
+    }
+    .full-width {
+      min-width: 300px;
+    }
+    .item {
+      text-align: center;
+    }
+  }
+}

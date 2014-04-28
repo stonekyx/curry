@@ -1,5 +1,5 @@
 class MessageController < ApplicationController
-  before_filter :post_only, :only => [:route, :browse]
+  before_filter :post_only, :only => [:route]
 
   def index
     render 'layouts/base'
@@ -35,5 +35,8 @@ class MessageController < ApplicationController
   end
 
   def browse
+    sent_items = Message.find_via_sid(session[:user_id])
+    received_items = Message.find_via_rid(session[:user_id])
+    render_json_success({:sent_items => sent_items, :received_items => received_items})
   end
 end

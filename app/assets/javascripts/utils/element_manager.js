@@ -24,7 +24,7 @@
       options = options || {};
       params  = this._getParamsByType('popup');
       var container = this._getPopupEl();
-      var popupView = new this.registedPopup[name](params);
+      var popupView = new this.registedPopup[name](_.extend(params, {models: options}));
       this._showOverlay();
       container.empty().append(popupView.render().el).show();
       popupView.afterRender();

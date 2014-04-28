@@ -7,6 +7,7 @@
 
     beforeRender: function() {
       this._init();
+      this.data = this._models.data;
     },
 
     _onClickCancel: function() {

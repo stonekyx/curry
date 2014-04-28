@@ -1,0 +1,34 @@
+<div class='table-container'>
+  <table class='table'>
+    <thead>
+      <tr class='tabs'>
+        <th class='user-name item half-width'>{{I18nt 'Common.Tabs.user_name'}}</th>
+        {{#ifequal messageAnchor compare='0'}}
+        <th class='email-from item full-width'>{{I18nt 'Common.Tabs.email_from'}}</th>
+        {{else}} {{#ifequal messageAnchor compare='1'}}
+        <th class='email-to item full-width'>{{I18nt 'Common.Tabs.email_to'}}</th>
+        {{/ifequal}} {{/ifequal}}
+        <th class='message-type item half-width'>{{I18nt 'Common.Tabs.message_type'}}</th>
+        <th class='project-name item half-width'>{{I18nt 'Common.Tabs.project_name'}}</th>
+        <th class='view-details item half-width'>{{I18nt 'Common.Tabs.view_details'}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each messageToShow}}
+      <tr class='content-row'>
+        <td class='user-name item'>{{mailer.first_name}}</th>
+        <td class='email item'>{{mailer.email}}</td>
+        {{#ifequal genre compare=0}}
+        <td class='message-type item'>{{I18nt 'Common.Tabs.create'}}</th>
+        {{else}} {{#ifequal genre compare=1}}
+        <td class='message-type item'>{{I18nt 'Common.Tabs.join'}}</th>
+        {{else}} {{#ifequal genre compare=2}}
+        <td class='message-type item'>{{I18nt 'Common.Tabs.comment'}}</th>
+        {{/ifequal}} {{/ifequal}} {{/ifequal}}
+        <td class='project-name item'>{{project_name}}</th>
+        <td class='view-details item blue-link'>{{I18nt 'Common.Tabs.view'}}</th>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

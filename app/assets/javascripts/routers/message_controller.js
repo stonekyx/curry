@@ -17,7 +17,7 @@
     },
 
     index: function() {
-      return this.swap(new Curry.Views.Message({template: this._template.message, context: this.CONTEXT.MESSAGE}));
+      return this.swap(new Curry.Views.Message({template: this._template.index, context: this.CONTEXT.MESSAGE}));
     },
 
     contact: function() {

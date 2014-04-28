@@ -55,5 +55,17 @@ body {
     .curry-border {
       border-radius: $border-radius;
     }
+    .blue-link {
+      color: $link-blue;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .description {
+      font-size: $small-font-size;
+      text-indent: 1em;
+      padding: 20px;
+    }
   }
 }

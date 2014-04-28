@@ -1,5 +1,6 @@
 en-us:
   js:
     Popup:
-      Login:
-        title: "Login to Curry"
+      Title:
+        login: "Login to Curry"
+        view_message_detail: "View Message Details"
