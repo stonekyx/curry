@@ -31,7 +31,7 @@
       if (Curry.Utils.isUndefined(variable) || Curry.Utils.isNull(variable)) return true;
 
       var type = Object.prototype.toString.call(variable).slice(8, -1);
-      switch(type) {
+      switch (type) {
         case 'String': return !$.trim(variable);
         case 'Array' : return !variable.length;
         case 'Object': return $.isEmptyObject(variable);

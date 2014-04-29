@@ -1,0 +1,27 @@
+<div id='ticket-info-container'>
+  <div class='table-container'>
+    <table class='table'>
+      <thead>
+        <tr class='tabs'>
+          <th class='ticket-name item half-width'>{{I18nt 'Common.Tabs.name'}}</th>
+          <th class='ticket-title item full-width'>{{I18nt 'Common.Tabs.title'}}</th>
+          <th class='ticket-status item half-width'>{{I18nt 'Common.Tabs.status'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each ticketList}}
+        <tr class='content-row'>
+          <td class='ticket-name item blue-link'>{{name}}</td>
+          <td class='ticket-title item'>{{title}}</td>
+          <!-- TODO: zacky, status field need to be clearified. -->
+          <td class='ticket-status item'>{{status}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class='button-container'>
+    <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.confirm'}}</div>
+  </div>
+</div>

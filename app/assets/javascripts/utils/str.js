@@ -71,6 +71,23 @@
       return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
         return index == 0 ? letter.toLowerCase() : connector + letter.toLowerCase();
       });
-    }
+    },
+
+    /*
+     * String formatting. Replaces {0}, {1}... for the first, second... argument(s) respectively.
+     * i.e.: '{0} is dead, but {1} is alive!', 'ASP', 'ASP.NET' => 'ASP is dead, but ASP.NET is alive!'
+     * @param {string} noname String to be formatted
+     * @param {strings} noname Strings to fill in slots
+     */
+    format: function() {
+      var args = Array.prototype.slice.apply(arguments);
+      var str = args.shift();
+      return str.replace(/{(\d+)}/g, function(match, number) {
+        return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+        ;
+      });
+    },
   };
 }).call(this, jQuery);

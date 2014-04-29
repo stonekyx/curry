@@ -5,7 +5,7 @@
   Curry.Utils.Form = {
     /*
      * Initialize inputs names of form. i.e.: first_name => First Name
-     * @param {css elements} form Form container including inputs to initialize
+     * @param {css elements} form Form container including inputs to initialize names
      */
     initInputNames: function(form) {
       var inputs = form.find('input, textarea').not('[type=hidden], [type=radio]');
@@ -15,6 +15,24 @@
         var label = $('<label>').html(name).attr('for', item.attr('id'));
         label.insertBefore(inputs[i]);
         label.inFieldLabels({fadeDuration: 100});
+      }
+    },
+
+    /*
+     * Initialize inputs values of form.
+     * @params {css elements} form Form container including inputs to initialize values
+     * @params {object} data The object contains values to initialize inputs
+     */
+    initInputValues: function(form, data) {
+      var inputs = form.find('input, textarea');
+      for (var i=0; i<inputs.length; i++) {
+        var item = inputs.eq(i);
+        var initValue = data[item.attr('name')];
+        if (!Curry.Utils.isBlank(initValue)) {
+          var label = form.find('label[for=' + item.attr('name') + ']');
+          label.hide();
+          item.val(initValue);
+        }
       }
     },
 

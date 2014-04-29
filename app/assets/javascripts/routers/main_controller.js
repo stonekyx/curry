@@ -16,6 +16,9 @@
       'thanks':  'SignupController.thanks',
       'message': 'MessageController.index',
       'contact': 'MessageController.contact',
+      'dashboard': 'ProjectsController.index',
+      //TODO, zacky, need to add logic to handle browser backward action issue.
+      'error': 'ErrorController.error',
       '*path': 'ErrorController.index'
     }
   });

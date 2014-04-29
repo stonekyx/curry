@@ -1,0 +1,33 @@
+<div id='project-details-container'>
+  <div class='form-container'>
+    <form method='post' id='project-form' accept-charset='UTF-8'>
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='name' class='full-width' name='name' maxlength='50'>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <textarea type='text' id='description' class='full-width' name='description' maxlength='500'></textarea>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class='button-container'>
+    {{#if manager.is_current_user}}
+    <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
+    <div id='edit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.edit'}}</div>
+    <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.submit'}}</div>
+    {{else}}
+    <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.confirm'}}</div>
+    {{/if}}
+  </div>
+</div>

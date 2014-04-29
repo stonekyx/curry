@@ -7,7 +7,7 @@
 
     events: _.extend({
       'click input[type=radio]': '_onClickRadioButton',
-      'click .view-details': '_onClickViewDetails'
+      'click .content-row .view-details': '_onClickViewDetails'
     }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {},
@@ -46,8 +46,8 @@
 
     _onClickViewDetails: function(evt) {
       if (evt.target) {
-        var idx = _.indexOf(this._container.find('.view-details'), evt.target) - 1;
-        Curry.Utils.ElementManager.showPopup('view_message_detail', {data: this.data.items.messageToShow[idx]});
+        var idx = _.indexOf(this._container.find('.content-row .view-details'), evt.target);
+        Curry.Utils.ElementManager.showPopup('view_message_detail', {data: {message: this.data.items.messageToShow[idx], infoType: this.data.items.messageAnchor}});
       }
     },
 

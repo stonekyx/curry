@@ -3,7 +3,7 @@
    * @namespace DateTime Utils
    */
   Curry.Utils.DateTime = {
-    checkFieldLists: ['sent_at'],
+    checkFieldLists: ['created_at', 'sent_at'],
 
     /*
      * Convert time string to specific scope.

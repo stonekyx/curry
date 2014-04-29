@@ -26,13 +26,10 @@
       var container = this._getPopupEl();
       var popupView = new this.registedPopup[name](_.extend(params, {models: options}));
       this._showOverlay();
-      container.empty().append(popupView.render().el).show();
+      container.empty().append(popupView.render().el).hide();
       popupView.afterRender();
       this._attachOverlayEventHandler('click', options.onClickOverlay || popupView._onClickCancel);
       this._attachPopupEventHandler('click', popupView._onClickCancel);
-      //NOTE: Make the container centered.
-      container.css('margin-left', -container.outerWidth()/2+"px");
-      container.css('margin-top', -container.outerHeight()/2+"px");
 
       return;
     },
@@ -43,6 +40,7 @@
     closePopup: function() {
       var container = this._getPopupEl();
       container.empty().hide();
+      container.css({left: '', top: '', width: '', height: '', 'overflow-x': '', 'overflow-y': ''});
       this._hideOverlay();
       this._detachOverlayEventHandler('click');
       this._detachPopupEventHandler('click');
@@ -73,6 +71,70 @@
      */
     _getOverlayEl: function() {
       return $('#overlay-container');
+    },
+
+    /*
+     * Get Element by Type.
+     */
+    getElByType: function(type) {
+      var el = null;
+
+      switch (type) {
+        case 'popup': el = this._getPopupEl(); break;
+      }
+
+      return el;
+    },
+
+    /*
+     * Get View Width and Height.
+     */
+    getViewportInfo: function() {
+      var w = $(window).width();
+      var h = $(window).height();
+      var x = $(window).scrollLeft();
+      var y = $(window).scrollTop();
+
+      return {width: w, height: h, left: x, top: y};
+    },
+
+    /*
+     * Show Element On Center of Window.
+     */
+    showElementOnCenter: function(el) {
+      if (Curry.Utils.isBlank(el)) return;
+
+      vpi = this.getViewportInfo();
+      var verticalMargin = 30;
+      var horizontalMargin = 40;
+
+      el.css({left: '', top: '', width: '', height: '', 'overflow-x': '', 'overflow-y': ''});
+
+      var left = (vpi.width - el.outerWidth()) / 2;
+      if (left < horizontalMargin) {
+        el.css({
+          left: horizontalMargin + 'px',
+          width: (vpi.width - horizontalMargin * 2) + 'px',
+          'overflow-x': 'auto'
+        });
+      } else {
+        el.css({left: left + 'px'});
+      }
+
+      var top = (vpi.height - el.outerHeight()) / 2;
+      if (top < verticalMargin) {
+        el.css({
+          top: verticalMargin + 'px',
+          height: (vpi.height - verticalMargin * 2) + 'px',
+          'overflow-y': 'auto'
+        });
+      } else {
+        el.css({top: top + 'px'});
+      }
+
+      if (el.width() && el.height()) {
+        el.show();
+      }
     },
 
     /*

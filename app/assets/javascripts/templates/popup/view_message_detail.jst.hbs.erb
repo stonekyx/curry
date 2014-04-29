@@ -1,7 +1,11 @@
 <div id='message-details-container'>
   <div class='detail-container'>
-    <div class='info'>{{mailer.first_name}} on {{sent_at}} Wrote:</div>
-    <div class='description'>{{description}}</div>
+    {{#ifequal infoType compare='0'}}
+    <div class='infomation'>{{I18nt 'Popup.Information.sender' false name=message.mailer.first_name time=message.sent_at}}</div>
+    {{else}}
+    <div class='infomation'>{{I18nt 'Popup.Information.receiver' false name=message.mailer.first_name time=message.sent_at}}</div>
+    {{/ifequal}}
+    <div class='description'>{{message.description}}</div>
   </div>
 
   <div class='button-container'>

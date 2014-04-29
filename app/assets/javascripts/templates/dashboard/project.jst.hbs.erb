@@ -1,0 +1,22 @@
+<div class='table-container'>
+  <table class='table'>
+    <thead>
+      <tr class='tabs'>
+        <th class='name item half-width'>{{I18nt 'Common.Tabs.project_name'}}</th>
+        <th class='manager item half-width'>{{I18nt 'Common.Tabs.project_manager'}}</th>
+        <th class='created-at item half-width'>{{I18nt 'Common.Tabs.created_at'}}</th>
+        <th class='view-details item half-width'>{{I18nt 'Common.Tabs.view_details'}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each projectList}}
+      <tr class='content-row'>
+        <td class='name item blue-link'>{{name}}</td>
+        <td class='manager item'>{{manager.first_name}}</td>
+        <td class='created-at item'>{{created_at}}</td>
+        <td class='view-details item blue-link'>{{I18nt 'Common.Tabs.view'}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

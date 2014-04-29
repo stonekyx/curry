@@ -11,6 +11,9 @@ Curry.Events = {
     },
     Home: {
       GAMEOVER: 'GAME-OVER',
+    },
+    Dashboard: {
+      INFOUPDATE: 'INFO-UPDATE',
     }
   },
 

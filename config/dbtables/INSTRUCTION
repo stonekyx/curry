@@ -9,10 +9,11 @@ Table 1: users
   address    ==> user address
 
 Table 2: projects
-  id           ==> project id
-  project_name ==> project name
-  created_at   ==> time project created
-  description  ==> description of project
+  id          ==> project id
+  mid         ==> manager id
+  name        ==> project name
+  created_at  ==> time project created
+  description ==> description of project
 
 Table 3: messages
   id           ==> message id
@@ -26,7 +27,8 @@ Table 3: messages
 Table 4: tickets
   id          ==> ticket id
   pid         ==> project id the ticket belongs to
-  ticket_name ==> ticket name
+  name        ==> ticket name
+  title       ==> ticket title
   created_at  ==> time ticket created
   rid         ==> reporter user id
   aid         ==> asignee user id

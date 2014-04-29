@@ -92,6 +92,7 @@ Handlebars.registerHelper('ifgt', function(context, options) {
  * scope: I18n key, safe: html_safe, options: I18n options
  */
 Handlebars.registerHelper('I18nt', function(scope, safe, options) {
-  var s = I18n.t(scope, options);  
+  options = options || {};
+  var s = I18n.t(scope, options.hash);
   return safe ? new Handlebars.SafeString(s) : s;
 });

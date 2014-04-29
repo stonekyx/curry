@@ -6,7 +6,7 @@
     /*
      * Fields names to validate.
      */
-    watchList: ['email', 'email_from', 'email_to', 'password', 'password_confirmation', 'first_name', 'last_name', 'project_name', 'description'],
+    watchList: ['email', 'email_from', 'email_to', 'password', 'password_confirmation', 'first_name', 'last_name', 'name', 'project_name', 'description'],
 
     /*
      * Validate router.

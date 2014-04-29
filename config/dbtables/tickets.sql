@@ -2,7 +2,8 @@ CREATE TABLE tickets
 (
 id int(11) NOT NULL AUTO_INCREMENT,
 pid int(11) NOT NULL,
-ticket_name varchar(255) NOT NULL,
+name varchar(255) NOT NULL,
+title varchar(255) NOT NULL,
 created_at datetime NOT NULL,
 rid int(11) NOT NULL,
 aid int(11) NOT NULL,

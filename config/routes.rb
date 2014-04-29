@@ -59,16 +59,22 @@ Curry::Application.routes.draw do
   match 'api/user/signup' => 'user#signup'
   match 'api/user/login'  => 'user#login'
   match 'api/user/logout' => 'user#logout'
-  match 'api/message/send_message' => 'message#create'
-  match 'api/message/browse_message' => 'message#browse'
+  match 'api/project/browse' => 'project#browse'
+  match 'api/project/ticket_list/:id' => 'project#ticket_list'
+  match 'api/project/fetch/:id' => 'project#fetch'
+  match 'api/project/update/:id' => 'project#update'
+  match 'api/message/send' => 'message#create'
+  match 'api/message/browse' => 'message#browse'
 
   match 'api/profile/user_info' => 'profile#user_info'
+
 
   # PAGE
   root :to => 'home#index'
   match 'signup' => 'user#index'
   match 'contact' => 'message#index'
   match 'message' => 'message#index'
+  match 'dashboard' => 'project#index'
 
   match '*not_found' => 'error#index'
 end
