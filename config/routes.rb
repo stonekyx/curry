@@ -65,10 +65,10 @@ Curry::Application.routes.draw do
   match 'api/profile/user_info' => 'profile#user_info'
 
   # PAGE
+  root :to => 'home#index'
   match 'signup' => 'user#index'
   match 'contact' => 'message#index'
   match 'message' => 'message#index'
-  root :to => 'home#index'
 
   match '*not_found' => 'errors#index'
 end

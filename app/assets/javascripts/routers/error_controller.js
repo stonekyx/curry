@@ -10,18 +10,12 @@
     },
 
     _template: {
-      error: 'error/error'
+      error: 'error/index'
     },
 
     index: function(path) {
-      Curry.navigate(Curry.Constants.URL.PAGE.ERROR, {replace: true});
-    },
-
-    error: function() {
-      return this.swap(new Curry.Views.Error({
-        template: this._template.error,
-        context: this.CONTEXT.ERROR,
-      }));
+      Curry.navigate(Curry.Constants.URL.PAGE.ERROR, {replace: true, needRefresh: false});
+      return this.swap(new Curry.Views.Error({template: this._template.error, context: this.CONTEXT.ERROR}));
     }
   });
 }).call(this, jQuery);

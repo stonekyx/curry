@@ -10,4 +10,4 @@ en-us:
       - "Which Part Would You Like to Play"
       - "Please Add Your Comments"
     Error:
-      message: "There's an error on this page."
+      message: "<h1>404</h1><div>It looks like you found a</div><h1>Dead End</h1>"

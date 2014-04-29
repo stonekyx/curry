@@ -39,7 +39,7 @@ body {
       margin-right: auto;
     }
     #content-container {
-      padding: $page-container-vertical-padding $page-container-horizontal-padding + $page-border-width
+      padding: $page-container-header-padding + $page-container-vertical-padding $page-container-horizontal-padding + $page-border-width $page-container-vertical-padding
     }
     #overlay-container {
       .overlay {

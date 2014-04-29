@@ -1,0 +1,16 @@
+// Place all the styles related to the Error View here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#error-container {
+  .error-content {
+    text-align: center;
+    .error-message {
+      padding-bottom: 10px;
+    }
+    .error-image {
+      @include view-sprite('dead-end');
+      margin: auto;
+    }
+  }
+}

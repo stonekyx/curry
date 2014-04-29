@@ -39,10 +39,16 @@
       if (Curry.Utils.isBlank(pathname)) {
         pathname = '/';
       }
+      options = options || {};
+      if (Curry.Utils.isBlank(options.needRefresh)) {
+        options.needRefresh = true;
+      }
 
       //NOTE: stone, please make sure this is correct and standard.
       Backbone.history.navigate(pathname, options);
-      Curry.Utils.Url.load(Curry.Utils.Url.getOrigin() + pathname);
+      if (options.needRefresh) {
+        Curry.Utils.Url.load(Curry.Utils.Url.getOrigin() + pathname);
+      }
     }
   };
 }).call(this, jQuery);

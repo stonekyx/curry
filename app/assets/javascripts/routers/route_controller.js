@@ -48,32 +48,31 @@
       Backbone.history || (Backbone.history = new History);
       if (!_.isRegExp(route)) route = this._routeToRegExp(route);
 
-      var self = this;
-      Backbone.history.route(route, function(fragment) {
-        var args = self._extractParameters(route, fragment);
+      Backbone.history.route(route, _.bind(function(fragment) {
+        var args = this._extractParameters(route, fragment);
         //NOTE: zacky, make sure 'name.split' is correct.
         var callbackGuide = name.split('.');
         if (callbackGuide && callbackGuide.length == 2) {
           var subRouterClass = Curry.Routers[callbackGuide[0]];
           if (subRouterClass) {
-            var subRouter = new subRouterClass(this);
+            var subRouter = new subRouterClass();
             var callback  = subRouter['_actionHandler'];
-            subRouter.router = self;
+            subRouter.router = this;
             args.unshift(callbackGuide[1]);
 
             callback.apply(subRouter, args);
           }
         }
-      });
+      }, this));
     },
 
     // Retrieve frame beforehand, like header & footer.
     _retrieveFrame: function() {
-      var headerRouter = new Curry.Routers.HeaderController(this);
+      var headerRouter = new Curry.Routers.HeaderController();
       var callback = headerRouter['index'];
       callback.apply(headerRouter);
 
-      var footerRouter = new Curry.Routers.FooterController(this);
+      var footerRouter = new Curry.Routers.FooterController();
       var callback = footerRouter['index'];
       callback.apply(footerRouter);
     },
