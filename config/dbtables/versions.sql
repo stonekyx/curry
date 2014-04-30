@@ -1,0 +1,7 @@
+CREATE TABLE versions
+(
+id int(11) NOT NULL AUTO_INCREMENT,
+pid int(11) NOT NULL,
+sprint varchar(255) NOT NULL,
+PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

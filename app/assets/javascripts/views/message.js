@@ -14,6 +14,7 @@
     renderInternal: function() {
       var self = this;
 
+      this._container.find('.message-browser').empty().html(this._loadingHtml);
       Curry.Helpers.JsonResponser.get({
         url: Curry.Constants.URL.API.BROWSEMESSAGE
       }).done(function(response) {

@@ -1,4 +1,4 @@
-class ErrorsController < ApplicationController
+class ErrorController < ApplicationController
   def index
     render 'layouts/base'
   end

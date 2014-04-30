@@ -70,5 +70,5 @@ Curry::Application.routes.draw do
   match 'contact' => 'message#index'
   match 'message' => 'message#index'
 
-  match '*not_found' => 'errors#index'
+  match '*not_found' => 'error#index'
 end

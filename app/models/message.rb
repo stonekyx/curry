@@ -4,7 +4,7 @@ class Message < Dove::Base
     :id,
     :sid,
     :rid,
-    :send_at,
+    :sent_at,
     :genre,
     :project_name,
     :description
@@ -13,7 +13,7 @@ class Message < Dove::Base
   define_data_fields(:WRITE_FIELD, [
     :sid,
     :rid,
-    :send_at,
+    :sent_at,
     :genre,
     :project_name,
     :description
@@ -45,7 +45,7 @@ class Message < Dove::Base
 
   def update_hash_to_save raw_hash
     hash = raw_hash.dup
-    hash[:send_at] = Time.now
+    hash[:sent_at] = Time.now
 
     hash
   end

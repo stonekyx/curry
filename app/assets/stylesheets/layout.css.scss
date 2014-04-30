@@ -62,6 +62,12 @@ body {
         text-decoration: underline;
       }
     }
+    .loading-section {
+      width: 150px;
+      height: 150px;
+      background-image: image_url('loading.gif');
+      margin: auto;
+    }
     .description {
       font-size: $small-font-size;
       text-indent: 1em;

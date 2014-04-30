@@ -18,6 +18,9 @@
       'blur textarea': '_onBlurField'
     },
 
+    /* Constant Html Elements */
+    _loadingHtml: '<div class="loading-section"></div>',
+
     /* Page Data Functions */
 
     initialize: function(options) {
