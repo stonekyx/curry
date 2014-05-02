@@ -1,0 +1,48 @@
+Table 1: users
+  id         ==> user id
+  email      ==> user email
+  password   ==> user hashed pass
+  salt       ==> random string to confuse pass
+  first_name ==> user first name
+  last_name  ==> user last name
+  joined_at  ==> time user joined
+  address    ==> user address
+
+Table 2: projects
+  id           ==> project id
+  project_name ==> project name
+  created_at   ==> time project created
+  description  ==> description of project
+
+Table 3: messages
+  id           ==> message id
+  sid          ==> sender user id
+  rid          ==> receiver user id
+  sent_at      ==> time message sent
+  genre        ==> genre of message (0: create, 1: join, 2: comment)
+  project_name ==> project name the message about
+  desctiption  ==> description of message
+
+Table 4: tickets
+  id          ==> ticket id
+  pid         ==> project id the ticket belongs to
+  ticket_name ==> ticket name
+  created_at  ==> time ticket created
+  rid         ==> reporter user id
+  aid         ==> asignee user id
+  genre       ==> genre of ticket (TBD)
+  status      ==> status of ticket
+  fid         ==> fix version id
+  description ==> description of ticket
+  comment     ==> comment of ticket
+
+Table 5: versions
+  id ==> version id
+  pid ==> project id
+  sprite ==> date duration (TBD)
+
+Table 6: relations:
+  id       ==> relation id
+  pid      ==> project id
+  uid      ==> user id
+  identity ==> identity of the user to this project (0: manager, 1: developer)
