@@ -3,16 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #header-container {
-  padding: 0 $page-border-width;
   #banner-container {
     .navigator {
-      width: $page-max-width - 2 * $page-container-horizontal-padding;
       background-color: $header-background;
       padding: $page-container-vertical-padding $page-container-horizontal-padding;
-      &.fixed-top {
-        top: 0;
-        position: fixed;
-      }
       .navigation-menu-list {
         .logo-section {
           display: inline-block;

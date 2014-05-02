@@ -3,9 +3,11 @@
 body {
   font-size: $medium-font-size;
   background-color: $body-background;
+  overflow-y: scroll;
   #wrap {
-    max-width: $page-max-width + 2 * $page-border-width;
+    width: $page-max-width;
     margin: 0 auto;
+    padding: 0 $page-border-width;
     position: relative;
 
     #page-left-shadow {
@@ -39,7 +41,7 @@ body {
       margin-right: auto;
     }
     #content-container {
-      padding: $page-container-header-padding + $page-container-vertical-padding $page-container-horizontal-padding + $page-border-width $page-container-vertical-padding
+      padding: $page-container-vertical-padding $page-container-horizontal-padding
     }
     #overlay-container {
       .overlay {
