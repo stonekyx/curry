@@ -7,12 +7,25 @@
     margin-bottom: 25px;
     .input-row {
       display: inline-block;
+      .input-text {
+        display: inline-block;
+        width: 90px;
+        padding: 10px 0px 10px 10px;
+        //NOTE: zacky, hack here for input-box message with input-text. Perhaps need redesign.
+        &~.input-box~.message {
+          margin-left: 105px;
+        }
+      }
       .input-box {
+        display: inline-block;
+        .half-width {
+          width: 150px;
+        }
         .full-width {
           width: 310px;
         }
         .error {
-          background-color: $red-background;
+          background-color: $error-background;
         }
 
         label {
@@ -21,9 +34,16 @@
           color: $label-color;
           padding: 10px;
         }
+        .stand-by {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: -42px;
+          cursor: pointer;
+        }
 
         input, textarea {
           font-size: $medium-font-size;
+          text-align: left;
           padding: 9px;
           margin-bottom: 0px;
         }
@@ -31,9 +51,25 @@
           display: inline-block;
           vertical-align: top;
         }
+        input[type=button] {
+          display: inline-block;
+          box-sizing: content-box;
+        }
         textarea {
           max-width: 500px;
-          max-height: 100px;
+          max-height: 200px;
+        }
+      }
+      .dropdown-box {
+        position: relative;
+        display: inline-block;
+        .caret {
+          position: absolute;
+          top: 50%;
+          left: 70%;
+        }
+        .dropdown-menu li{
+          cursor: pointer;
         }
       }
       .message {
@@ -42,13 +78,19 @@
         }
         position: absolute;
         margin-top: 5px;
-        font-size: $small-font-size;
+        font-size: $tiny-font-size;
         color: $red-error;
       }
     }
   }
   .blank-line {
     height: 20px;
+  }
+  .edit-btn {
+    @include mark-sprite('edit-button');
+  }
+  .check-btn {
+    @include mark-sprite('check-button');
   }
 }
 .button-container {

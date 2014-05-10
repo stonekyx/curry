@@ -5,11 +5,11 @@
   Curry.Views.Error = Curry.Views.BaseView.extend({
     name: 'error',
 
+    events: _.extend({
+    }, Curry.Views.BaseView.prototype.events),
+
     beforeRender: function() {},
-    renderInternal: function() {
-      this._container.find('#error-code').empty().html(404);
-      this._container.find('#error-message').empty().html(I18n.t('Error.message'));
-    },
+    renderInternal: function() {},
     afterRender: function() {}
   });
 }).call(this, jQuery);

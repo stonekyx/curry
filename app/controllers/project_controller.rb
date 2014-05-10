@@ -1,5 +1,5 @@
 class ProjectController < ApplicationController
-  before_filter :post_only, :only => [:modify_project_info]
+  before_filter :post_only, :only => [:update]
 
   def index
     render 'layouts/base'
@@ -10,8 +10,8 @@ class ProjectController < ApplicationController
   #proj.description.force_encoding('UTF-8')
 
   def browse
-    pid_list = Relation.where(:uid => session[:user_id]).pluck(:pid).uniq
-    projects = Project.find_via_id(pid_list, session[:user_id])
+    pid_list = Relation::PU.where(:uid => session[:user_id]).pluck(:pid).uniq
+    projects = Project.find_via_id(pid_list, {:uid => session[:user_id]})
     render_json_success ({:list => projects})
   end
 
@@ -27,7 +27,7 @@ class ProjectController < ApplicationController
   end
 
   def fetch
-    project = Project.find_via_id(params[:id], session[:user_id])
+    project = Project.find_via_id(params[:id], {:uid => session[:user_id]})
     render_json_success ({:item => project.first})
   end
 

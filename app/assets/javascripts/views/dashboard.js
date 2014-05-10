@@ -5,10 +5,10 @@
   Curry.Views.Dashboard = Curry.Views.BaseView.extend({
     name: 'dashboard',
 
-    events: {
+    events: _.extend({
       'click .content-row .name': '_onClickItem',
       'click .content-row .view-details': '_onClickViewDetails'
-    },
+    }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {
       Curry.Utils.EventManager.bind(Curry.Events.Views.Dashboard.INFOUPDATE, this._onProjectInfoUpdate, this);

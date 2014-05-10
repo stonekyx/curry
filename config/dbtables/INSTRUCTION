@@ -22,29 +22,38 @@ Table 3: messages
   sent_at      ==> time message sent
   genre        ==> genre of message (0: create, 1: join, 2: comment)
   project_name ==> project name the message about
-  desctiption  ==> description of message
-
-Table 4: tickets
+  desctiption  ==> description of message Table 4: tickets
   id          ==> ticket id
   pid         ==> project id the ticket belongs to
+  genre       ==> genre of ticket (0: task, 1: bug, 2: improvement, 3: investigation)
   name        ==> ticket name
   title       ==> ticket title
   created_at  ==> time ticket created
+  priority    ==> priority of ticket (0: high, 1: medium, 2: low)
+  status      ==> status of ticket (0: open, 1: in process, 2: fixed, 3: won't fix)
   rid         ==> reporter user id
-  aid         ==> asignee user id
-  genre       ==> genre of ticket (TBD)
-  status      ==> status of ticket
+  aid         ==> assignee user id
   fid         ==> fix version id
   description ==> description of ticket
-  comment     ==> comment of ticket
 
-Table 5: versions
-  id ==> version id
-  pid ==> project id
-  sprite ==> date duration (TBD)
+Table 5: comments
+  id         ==> comment id
+  uid        ==> user id
+  created_at ==> time comment created
+  content    ==> content of comment
 
-Table 6: relations:
-  id       ==> relation id
+Table 6: versions
+  id       ==> version id
   pid      ==> project id
-  uid      ==> user id
-  identity ==> identity of the user to this project (0: manager, 1: developer)
+  is_alive ==> whether this version is alive
+  sprite   ==> date duration (TBD)
+
+Table 7: relations_pu:
+  id  ==> relation id
+  pid ==> project id
+  uid ==> user id
+
+Table 8: relations_tc:
+  id  ==> relation id
+  tid ==> ticket id
+  cid ==> comment id

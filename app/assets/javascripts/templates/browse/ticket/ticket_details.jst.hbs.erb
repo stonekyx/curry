@@ -1,0 +1,146 @@
+<div class='ticket-detials'>
+  <div class='form-container'>
+    <form method='post' id='ticket-form' accept-charset='UTF-8'>
+      <div class='header-section'>
+        <div class='ticket-genre'>
+          {{#ifequal genre compare=0}}
+          <div class='task-icon'></div>
+          {{else}} {{#ifequal genre compare=1}}
+          <div class='bug-icon'></div>
+          {{else}} {{#ifequal genre compare=2}}
+          <div class='improvement-icon'></div>
+          {{else}} {{#ifequal genre compare=3}}
+          <div class='investigation-icon'></div>
+          {{/ifequal}} {{/ifequal}} {{/ifequal}} {{/ifequal}}
+          <div class='genre-text headline'>{{genreText}}</div>
+        </div>
+
+        <div class='ticket-name headline'>{{name}}</div>
+
+        <div class='ticket-title headline'>{{title}}</div>
+      </div>
+
+      <div class='buffer-section'>
+        <div class='instruction-text'>{{I18nt 'Common.Instruction.information'}}</div>
+        <div class='dividing-line'></div>
+      </div>
+
+      <div class='info-section'>
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.created_at'}}</div>
+            <div class='input-box'>
+              <input type='text' id='created-at' class='half-width' name='created_at' value='{{createdAt}}' maxlength='50'>
+            </div>
+          </div>
+
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.priority'}}</div>
+            <div class='input-box'>
+              <div class='dropdown-box'>
+                <input type='button' id='priority' class='dropdown-toggle half-width' name='priority' data-toggle='dropdown' value='{{priorityText}}'>
+                <div class='edit-btn stand-by'></div>
+                <div class='caret'></div>
+                <ul class='dropdown-menu'>
+                  {{#each priorityList}}
+                  <li><a>{{.}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.status'}}</div>
+            <div class='input-box'>
+              <div class='dropdown-box'>
+                <input type='button' id='status' class='dropdown-toggle half-width' name='status' data-toggle='dropdown' value='{{statusText}}'>
+                <div class='edit-btn stand-by'></div>
+                <div class='caret'></div>
+                <ul class='dropdown-menu'>
+                  {{#each statusList}}
+                  <li><a>{{.}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='virtual-input-row'>
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.reporter'}}</div>
+            <div class='input-box'>
+              <input type='text' id='reporter' class='half-width' name='reporter' value='{{reporterName}}' maxlength='50'>
+            </div>
+          </div>
+
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.assignee'}}</div>
+            <div class='input-box'>
+              <input type='text' id='assignee' class='half-width' name='assignee' value='{{assigneeName}}' maxlength='50'>
+              <div class='edit-btn stand-by'></div>
+            </div>
+            <div class='message'></div>
+          </div>
+
+          <div class='input-row'>
+            <div class='input-text'>{{I18nt 'Common.Tabs.fix_version'}}</div>
+            <div class='input-box'>
+              <input type='text' id='fix-version' class='half-width' name='fix_version' value='{{fixVersion}}' maxlength='50'>
+              <div class='edit-btn stand-by'></div>
+            </div>
+            <div class='message'></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='buffer-section'>
+        <div class='instruction-text'>{{I18nt 'Common.Instruction.description'}}</div>
+        <div class='dividing-line'></div>
+      </div>
+
+      <div class='description-section'>
+        <div class='description-content'>
+          <div class='description'>{{description}}</div>
+        </div>
+      </div>
+
+      <div class='buffer-section'>
+        <div class='instruction-text'>{{I18nt 'Common.Instruction.comment'}}</div>
+        <div class='dividing-line'></div>
+      </div>
+
+      <div class='comment-section'>
+        <div class='section-container virtual-input-row'>
+          {{#each comments}}
+          <div class='comment-item'>
+            <div class='publisher-avatar default'></div>
+            <div class='comment-content'>
+              <div class='quote-shadow'></div>
+              <div class='quote-facade'></div>
+              <div class='header'>{{I18nt 'Browse.Ticket.comment_header' name=publisher_name time=created_at}}</div>
+              <div class='description'>{{content}}</div>
+            </div>
+            <div class='blank-line'></div>
+          </div>
+          {{/each}}
+
+          <div class='input-row comment-bucket'>
+            <div class='form-title'>{{I18nt 'Browse.Ticket.comment_title'}}</div>
+            <div class='input-box'>
+              <textarea type='text' id='comment' class='comment-area' name='comment' maxlength='2000'></textarea>
+            </div>
+            <div class='message'></div>
+          </div>
+        </div>
+
+        <div class='button-container'>
+          <div id='edit-btn' class='btn btn-large btn-inverse'>{{I18nt 'Common.Button.add_comment'}}</div>
+          <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
+          <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.save'}}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

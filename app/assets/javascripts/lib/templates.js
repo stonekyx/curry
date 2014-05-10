@@ -89,10 +89,10 @@ Handlebars.registerHelper('ifgt', function(context, options) {
 
 /**
  * I18n method for template
- * scope: I18n key, safe: html_safe, options: I18n options
+ * scope: I18n key, options: I18n options
  */
-Handlebars.registerHelper('I18nt', function(scope, safe, options) {
+Handlebars.registerHelper('I18nt', function(scope, options) {
   options = options || {};
   var s = I18n.t(scope, options.hash);
-  return safe ? new Handlebars.SafeString(s) : s;
+  return new Handlebars.SafeString(s);
 });

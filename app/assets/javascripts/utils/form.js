@@ -27,10 +27,10 @@
       var inputs = form.find('input, textarea');
       for (var i=0; i<inputs.length; i++) {
         var item = inputs.eq(i);
-        var initValue = data[item.attr('name')];
+        var initValue = data[Curry.Utils.Str.camelize(item.attr('name'))] || data[item.attr('name')];
         if (!Curry.Utils.isBlank(initValue)) {
           var label = form.find('label[for=' + item.attr('name') + ']');
-          label.hide();
+          if (!Curry.Utils.isBlank(label)) label.hide();
           item.val(initValue);
         }
       }

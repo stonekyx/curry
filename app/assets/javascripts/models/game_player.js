@@ -1,8 +1,8 @@
 (function($){
   /**
-   * @class: HomeView implemets the page logic of home page.
+   * @class: Game Player
    */
-  Curry.Models.GamePlayer = Curry.Models.BaseModel.extend({
+  Curry.Models.GamePlayer = Curry.Models.Base.extend({
     name: 'gamePlayer',
 
     readOnly: false,

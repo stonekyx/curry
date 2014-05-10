@@ -7,13 +7,13 @@
     //NOTE: el is div#main surrounding _container
     name: 'home',
 
-    events: {
+    events: _.extend({
       //TODO: zanwen, should add <span> to toggle game start & end.
       'click #map': '_onGameStart',
       'blur #map': '_onGameFail',
       'keydown #map': '_onEnterDirection',
       'keyup #map': '_onLoseDirection'
-    },
+    }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {
       this.game = {};
@@ -49,7 +49,7 @@
         var tempGrid = self.player.updateCurrentPath();
         if (!Curry.Utils.isBlank(tempGrid)) {
           var pathId = 'path-' + tempGrid.id;
-          self.locationEl.before("<div id='" + pathId + "' class='curry-border'></div>");
+          self.locationEl.before("<div id='" + pathId + "'></div>");
           self.playgroundEl.find('#'+pathId).css('top',    (tempGrid.position[0]*tempGrid.size)+'px');
           self.playgroundEl.find('#'+pathId).css('left',   (tempGrid.position[1]*tempGrid.size)+'px');
           self.playgroundEl.find('#'+pathId).css('width',  tempGrid.size+'px');

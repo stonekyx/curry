@@ -23,3 +23,15 @@ en-us:
         description:
         -
         - "Please Write Down Your Description"
+        comment:
+        -
+        - "Please Write Down Your Comment"
+        - "You're Not Required to Leave a Comment"
+        assignee:
+        -
+        - "Please Enter Assignee"
+        - "No Such User"
+        fix_version:
+        -
+        - "Please Enter Fix Version"
+        - "Version Expired or Not Existed"

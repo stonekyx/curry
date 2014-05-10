@@ -3,6 +3,10 @@ en-us:
     Signup:
       form_title: "Tell us About You..."
       form_title_optional: "Fill the Info if you like"
+    Browse:
+      Ticket:
+        comment_header: "<a class='blue-link'>%{name}</a> on %{time} Commented:"
+        comment_title: "Please Leave a Comment if You Like"
     Message:
       form_title: "Select Type of Message"
       project_description:

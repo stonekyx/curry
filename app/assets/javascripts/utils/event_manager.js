@@ -109,7 +109,7 @@
       var name = observer.name;
       var type = '';
 
-      if (observer instanceof Curry.Models.BaseModel) {
+      if (observer instanceof Curry.Models.Base) {
         type = 'model';
       } else if (observer instanceof Curry.Views.BaseView) {
         type = 'view';

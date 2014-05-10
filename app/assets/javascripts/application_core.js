@@ -7,6 +7,7 @@
 //= require moment
 //= require underscore
 //= require handlebars
+//= require bootstrap
 //= require backbone
 //= require backbone-support
 //

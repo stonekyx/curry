@@ -25,6 +25,9 @@
     // Models of current page
     pageModels:  {},
 
+    // Data of current page
+    pageData: {},
+
     /* Page Data Functions */
 
     _generatePageConfigs: function(context) {},

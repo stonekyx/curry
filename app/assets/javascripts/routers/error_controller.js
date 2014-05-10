@@ -13,6 +13,10 @@
       error: 'error/index'
     },
 
+    error: function() {
+      return this.swap(new Curry.Views.Error({template: this._template.error, context: this.CONTEXT.ERRIR}));
+    },
+
     index: function(path) {
       Curry.navigate(Curry.Constants.URL.PAGE.ERROR, {replace: true, needRefresh: false});
       return this.swap(new Curry.Views.Error({template: this._template.error, context: this.CONTEXT.ERROR}));

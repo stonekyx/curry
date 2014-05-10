@@ -54,9 +54,6 @@ body {
         opacity: $show-opacity;
       }
     }
-    .curry-border {
-      border-radius: $border-radius;
-    }
     .blue-link {
       color: $link-blue;
       cursor: pointer;
@@ -73,6 +70,7 @@ body {
     .description {
       font-size: $small-font-size;
       text-indent: 1em;
+      word-wrap: break-word;
       padding: 20px;
     }
   }

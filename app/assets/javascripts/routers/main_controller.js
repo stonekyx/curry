@@ -16,8 +16,9 @@
       'thanks':  'SignupController.thanks',
       'message': 'MessageController.index',
       'contact': 'MessageController.contact',
-      'dashboard': 'ProjectsController.index',
-      //TODO, zacky, need to add logic to handle browser backward action issue.
+      'dashboard': 'DashboardController.index',
+      'browse': 'BrowseController.index',
+      'browse/ticket_id=:id': 'BrowseController.ticket',
       'error': 'ErrorController.error',
       '*path': 'ErrorController.index'
     }

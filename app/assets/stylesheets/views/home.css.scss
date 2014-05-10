@@ -8,15 +8,17 @@
     #map {
       background: $game-background;
       display: inline-block;
+      border-radius: $border-radius;
       width:  960px;
       height: 260px;
       padding: 20px;
       .playground {
         position: relative;
-        [id*='path-'] {
+        [id^='path-'] {
           background: $path-background;
-          display: none;
           position: absolute;
+          display: none;
+          border-radius: $border-radius;
         }
         #player {
           position: absolute;

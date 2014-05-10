@@ -49,4 +49,17 @@ class ApplicationController < ActionController::Base
       :success => params[:controller]+'#'+params[:action]
     }.merge!(data).to_json
   end
+
+  def render_json_success_with_builder options={}
+    return render_json_success(options[:data]) if options[:file].blank?
+
+    render(
+      :file => options[:file],
+      :formats => [:json],
+      :handlers => [:json_builder],
+      :locals => {
+        :success => params[:controller]+'#'+params[:action]
+      }.merge(options[:data])
+    )
+  end
 end

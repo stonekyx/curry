@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'json'
+gem "json_builder"
 gem 'htmlcompressor'
 gem 'momentjs-rails'
 gem 'jquery-rails'

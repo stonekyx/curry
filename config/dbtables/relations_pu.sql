@@ -1,8 +1,7 @@
-CREATE TABLE relations
+CREATE TABLE relations_pu
 (
 id int(11) NOT NULL AUTO_INCREMENT,
 pid int(11) NOT NULL,
 uid int(11) NOT NULL,
-identity int(11) NOT NULL,
 PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

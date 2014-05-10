@@ -53,6 +53,7 @@
 
   Curry.Controls.Popup.ViewTicketInfo = Curry.Controls.Popup.extend({
     events: _.extend({
+      'click .content-row .ticket-name': '_onClickTicket'
     }, Curry.Controls.Popup.prototype.events),
 
     _init: function() {
@@ -74,13 +75,28 @@
         url: Curry.Utils.Str.format(Curry.Constants.URL.API.PROJECTTICKETS, this.data.id)
       }).done(function(response) {
         self.data.ticketList = response['list'];
+        var statusList = I18n.t('Common.Dropdown.ticket_status');
+        _.each(self.data.ticketList, function(item) {
+          item['status'] = statusList[item['status']];
+        });
         doRender();
       }).fail(function(response) {
         alert('Failed...');
       });
     },
 
-    _initElements: function() {}
+    _initElements: function() {},
+
+    _onClickTicket: function(evt) {
+      if (evt.target) {
+        var idx = _.indexOf(this._container.find('.content-row .ticket-name'), evt.target);
+        var ticketId = this.data.ticketList[idx].id;
+        if (!Curry.Utils.isBlank(ticketId)) {
+          this._onClickCancel();
+          Curry.navigate(Curry.Utils.Str.format(Curry.Constants.URL.PAGE.BROWSETICKET, ticketId));
+        }
+      }
+    }
   });
 
   Curry.Controls.Popup.ViewProjectDetail = Curry.Controls.Popup.extend({
@@ -104,7 +120,7 @@
     _initElements: function() {
       Curry.Utils.Form.initInputNames(this.form);
       Curry.Utils.Form.initInputValues(this.form, this.data);
-      this.form.find('input, textarea').not('[type=hidden]').attr('disabled', 'disabled');
+      this.form.find('input, textarea').not('[type=hidden]').attr('disabled', true);
       this.buttons.find('#edit-btn').show();
       this.buttons.find('#submit-btn').hide();
     },

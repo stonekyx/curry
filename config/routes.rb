@@ -63,6 +63,9 @@ Curry::Application.routes.draw do
   match 'api/project/ticket_list/:id' => 'project#ticket_list'
   match 'api/project/fetch/:id' => 'project#fetch'
   match 'api/project/update/:id' => 'project#update'
+  match 'api/ticket/fetch/:id' => 'ticket#fetch'
+  match 'api/ticket/update/:id' => 'ticket#update'
+  match 'api/ticket/add_comment/:id' => 'ticket#add_comment'
   match 'api/message/send' => 'message#create'
   match 'api/message/browse' => 'message#browse'
 
@@ -75,6 +78,7 @@ Curry::Application.routes.draw do
   match 'contact' => 'message#index'
   match 'message' => 'message#index'
   match 'dashboard' => 'project#index'
+  match 'browse/*query' => 'ticket#index'
 
   match '*not_found' => 'error#index'
 end

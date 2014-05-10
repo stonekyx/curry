@@ -6,7 +6,8 @@
 /* size */
 $large-font-size : 26px;
 $medium-font-size: 18px;
-$small-font-size : 13px;
+$small-font-size : 16px;
+$tiny-font-size  : 13px;
 
 
 /* weights */
@@ -22,6 +23,7 @@ $brown:   #522E23;
 $grey-fa: #FAFAFA;
 $grey-f2: #F2F2F2;
 $grey-f1: #F1F1F1;
+$grey-e:  #EEEEEE;
 $grey-d:  #DDDDDD;
 $grey-c:  #CCCCCC;
 $grey-c6: #C6C6C6;
@@ -39,7 +41,6 @@ $black:   #000000;
 
 /* promotion & error colors */
 $dark-red:  #CC0000;
-$red-background: #F7F5DC;
 $red-error: #B8010F;
 
 /* text and links */
@@ -56,6 +57,7 @@ $popup-background:   $white;
 $input-background:   $grey-fa;
 $game-background:    $grey-4;
 $master-background:  $blue-d;
+$error-background:   #F7F5DC;
 $path-background:    #FBCDC0;
 
 /* opacity */

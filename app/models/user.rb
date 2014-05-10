@@ -37,6 +37,13 @@ class User < Dove::Base
     find(:first, :select => get_data_fields(:BRIEF_FIELD).to_a, :conditions => {:id => id})
   end
 
+  def self.check options={}
+    item = find(:all, :select => :id, :conditions => options)
+
+    #TODO: zacky, need to handle multi-users issue here.
+    item.blank? ? -1 : item.first[:id]
+  end
+
   def authenticate password
     self.password_matches?(password)
   end

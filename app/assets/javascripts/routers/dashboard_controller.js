@@ -1,9 +1,9 @@
 (function($) {
   /**
-   * @class: ProjectsController implements routing stuffs in projects page.
+   * @class: DashboardController implements routing stuffs in dashboard page.
    */
-  Curry.Routers.ProjectsController = Curry.Routers.BaseController.extend({
-    name: 'projects',
+  Curry.Routers.DashboardController = Curry.Routers.BaseController.extend({
+    name: 'dashboard',
 
     CONTEXT: {
       DASHBOARD: 'dashboard'

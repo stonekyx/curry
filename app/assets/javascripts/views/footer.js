@@ -5,7 +5,8 @@
   Curry.Views.Footer = Curry.Views.BaseView.extend({
     name: 'footer',
 
-    events: {},
+    events: _.extend({
+    }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {},
 

@@ -15,7 +15,8 @@
       'blur input': '_onBlurField',
       'focus textarea': '_onFocusField',
       'input textarea': '_onInputField',
-      'blur textarea': '_onBlurField'
+      'blur textarea': '_onBlurField',
+      'click .dropdown-menu li': '_onClickDropdownList'
     },
 
     /* Constant Html Elements */
@@ -28,6 +29,7 @@
       this._template = options.template;
       this._context  = options.context;
       this._models   = options.models || {};
+      this._data     = options.data || {};
     },
 
     /* Rendering Functions */
@@ -42,7 +44,7 @@
         //TODO: zanwen, should throw exceptions here.
       }
       $(this.el).attr('id', 'main');
-      $(this.el).html(this.renderTemplate(this._template, this._models.coreModel));
+      $(this.el).html(this.renderTemplate(this._template, this._data));
       this._container = $(this.el).find('#' + this._context + '-container');
     },
 
@@ -67,8 +69,17 @@
     _onInputField: function(evt) {},
 
     _onBlurField: function(evt) {
-      if (!$(evt.target).hasClass('optional')) {
+      if (!$(evt.target).hasClass('optional') && !Curry.Utils.isBlank(this.form)) {
         Curry.Utils.Form.advanceFieldProgress(evt.target.name, this.form);
+      }
+    },
+
+    _onClickDropdownList: function(evt) {
+      if (evt.target) {
+        var text = evt.target.text;
+        var input = $(evt.target).parents('.dropdown-box').find('input');
+        input.val(text);
+        input.focus();
       }
     },
 

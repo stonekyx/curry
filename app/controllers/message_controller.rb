@@ -8,17 +8,17 @@ class MessageController < ApplicationController
   def create
     @sender = User.find_via_email(params[:email_from])
     if @sender.blank?
-      @errors = {:code => 'Message', :message => {:popup_error_slot => 'email_from_not_exist'}}
+      @errors = {:code => 'MESSAGE_CREATE', :message => {:popup_error_slot => 'email_from_not_exist'}}
     elsif @sender.id != session[:user_id]
-      @errors = {:code => 'Message', :message => {:popup_error_slot => 'email_from_not_match'}}
+      @errors = {:code => 'MESSAGE_CREATE', :message => {:popup_error_slot => 'email_from_not_match'}}
     end
     return render_json_errors unless @errors.blank?
 
     @receiver = User.find_via_email(params[:email_to])
     if @receiver.blank?
-      @errors = {:code => 'Message', :message => {:popup_error_slot => 'email_to_not_exist'}}
+      @errors = {:code => 'MESSAGE_CREATE', :message => {:popup_error_slot => 'email_to_not_exist'}}
     elsif params[:email_from] == params[:email_to]
-      @errors = {:code => 'Message', :message => {:popup_error_slot => 'same_email'}}
+      @errors = {:code => 'MESSAGE_CREATE', :message => {:popup_error_slot => 'same_email'}}
     end
     return render_json_errors unless @errors.blank?
 

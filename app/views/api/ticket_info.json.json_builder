@@ -1,0 +1,25 @@
+success success
+
+id ticket.id
+project_id ticket.pid
+genre ticket.genre
+name ticket.name
+title ticket.title
+created_at ticket.created_at
+priority ticket.priority
+status ticket.status
+description ticket.description
+
+reporter_email reporter.email
+reporter_name reporter.first_name
+assignee_email assignee.email
+assignee_name assignee.first_name
+fix_version fix_version
+
+comments comments do |comment|
+  publisher_email comment.publisher.email
+  publisher_name comment.publisher.first_name
+  created_at comment.created_at
+  content comment.content
+end
+

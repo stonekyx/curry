@@ -5,11 +5,11 @@
   Curry.Views.Header = Curry.Views.BaseView.extend({
     name: 'header',
 
-    events: {
+    events: _.extend({
       'click .item': '_onClickItem',
       'click .login': '_onClickLogin',
       'click .logout': '_onClickLogout'
-    },
+    }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {
       Curry.Utils.EventManager.bind(Curry.Events.Views.Header.LOGGEDIN, this._onUserLoggedIn, this);

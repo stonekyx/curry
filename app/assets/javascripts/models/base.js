@@ -1,8 +1,8 @@
 (function($){
   /**
-   * @class: BaseModel implements the basic functionality of a Model.
+   * @class: Base Model implements the basic functionality of a Model.
    */
-  Curry.Models.BaseModel = Backbone.Model.extend({
+  Curry.Models.Base = Backbone.Model.extend({
     /* Local Variables */
 
     // The name will be used as a key to store the current model.
@@ -29,7 +29,12 @@
         var modelAttr = _.keys(obj)[0];
         var defaultVal = obj[modelAttr];
         var jsonVal = attributes[Curry.Utils.Str.decamelize(modelAttr, '_')];
-        this[modelAttr] = Curry.Utils.isBlank(jsonVal) ? defaultVal : jsonVal;
+
+        if (defaultVal instanceof Function && this.readOnly) {
+          this[modelAttr] = defaultVal.apply(this, [jsonVal]);
+        } else {
+          this[modelAttr] = Curry.Utils.isBlank(jsonVal) ? defaultVal : jsonVal;
+        }
       }
     }
   });
