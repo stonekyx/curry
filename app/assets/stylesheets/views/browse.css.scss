@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#dashboard-container {
+  text-align: center;
+  .dashboard-content {
+    display: inline-block;
+  }
+}
+
 #ticket-container {
   padding: 30px;
   .ticket-content {
@@ -37,11 +44,12 @@
           .ticket-genre .genre-text {
             margin-top: 10px;
           }
-          .ticket-name {
+          .ticket-name, .ticket-title {
             margin-left: 20px;
           }
           .ticket-title {
-            margin-left: 30px;
+            max-width: 500px;
+            word-wrap: break-word;
           }
         }
         .description-section {

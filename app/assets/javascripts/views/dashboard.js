@@ -18,7 +18,7 @@
       var self = this;
 
       var doRender = function() {
-        self._container.find('.project-browser').empty().html(self.renderTemplate('dashboard/project', self.data));
+        self._container.find('.project-browser').empty().html(self.renderTemplate('browse/project', self.data));
       };
 
       this._container.find('.project-browser').empty().html(this._loadingHtml);

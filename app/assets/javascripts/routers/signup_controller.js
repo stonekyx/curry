@@ -21,6 +21,7 @@
     },
 
     thanks: function() {
+      //TODO: zacky, need to add thanks page.
       return this.swap(new Curry.Views.Thanks({template: this._template.thanks, context: this.CONTEXT.THANKS}));
     }
   });

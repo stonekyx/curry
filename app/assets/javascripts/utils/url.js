@@ -31,6 +31,18 @@
       return window.location.pathname;
     },
 
+    getPathnameLocation: function() {
+      var pathLoc = this.getPathname();
+
+      if (/^\/thanks.*/.test(pathLoc)) {
+        pathLoc = 'signup';
+      } else if (/^\/browse.*/.test(pathLoc)) {
+        pathLoc = '/dashboard';
+      }
+
+      return pathLoc;
+    },
+
     /* Load Page */
     load: function(url) {
       document.location.href = url;

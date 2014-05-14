@@ -40,7 +40,7 @@
     },
 
     /*
-     * Titleize the string, split the whole string ans capitalize each one.
+     * Titleize the string, split the whole string and capitalize each one.
      * @param {String} s string to be evaluated
      * @return {String} The result string
      */

@@ -16,8 +16,7 @@
       'thanks':  'SignupController.thanks',
       'message': 'MessageController.index',
       'contact': 'MessageController.contact',
-      'dashboard': 'DashboardController.index',
-      'browse': 'BrowseController.index',
+      'dashboard': 'BrowseController.index',
       'browse/ticket_id=:id': 'BrowseController.ticket',
       'error': 'ErrorController.error',
       '*path': 'ErrorController.index'

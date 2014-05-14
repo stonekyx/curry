@@ -6,7 +6,7 @@
     name: 'browse',
 
     CONTEXT: {
-      INDEX: 'index',
+      DASHBOARD: 'dashboard',
       TICKET: 'ticket'
     },
 
@@ -16,7 +16,7 @@
     },
 
     index: function() {
-      //TODO: zacky, need to handle browse route issue.
+      return this.swap(new Curry.Views.Dashboard({template: this._template.index, context: this.CONTEXT.DASHBOARD}));
     },
 
     ticket: function() {

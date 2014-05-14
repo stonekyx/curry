@@ -57,10 +57,10 @@
     },
 
     _locateAnchor: function() {
-      var pathname = Curry.Utils.Url.getPathname();
+      var pathnameLocation = Curry.Utils.Url.getPathnameLocation();
       var headerItems = this._container.find('.item').not('.login .logout');
       var indexOfAnchor = _.indexOf(headerItems, _.find(headerItems, function(item) {
-        return !Curry.Utils.isBlank($(item).attr('link-for')) && $(item).attr('link-for') == pathname;
+        return !Curry.Utils.isBlank($(item).attr('link-for')) && $(item).attr('link-for') == pathnameLocation;
       }));
       $(headerItems[indexOfAnchor]).addClass('anchor');
     }
