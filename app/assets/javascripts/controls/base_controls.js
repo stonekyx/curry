@@ -12,7 +12,7 @@
     }, Curry.Views.BaseView.prototype.events),
 
     beforeRender: function() {
-      this.data = this._models.data;
+      this.data = this._models.data || {};
       this._init();
     },
 

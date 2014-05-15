@@ -16,6 +16,18 @@
           margin-left: 105px;
         }
       }
+      .dropdown-box {
+        position: relative;
+        display: inline-block;
+        .caret {
+          position: absolute;
+          top: 50%;
+          left: 90%;
+        }
+        .dropdown-menu li{
+          cursor: pointer;
+        }
+      }
       .input-box {
         display: inline-block;
         .half-width {
@@ -23,6 +35,9 @@
         }
         .full-width {
           width: 310px;
+        }
+        .one-half-width {
+          width: 500px;
         }
         .error {
           background-color: $error-background;
@@ -39,6 +54,9 @@
           vertical-align: middle;
           margin-left: -42px;
           cursor: pointer;
+          &~.caret {
+            left: 70%;
+          }
         }
 
         input, textarea {
@@ -58,18 +76,6 @@
         textarea {
           max-width: 500px;
           max-height: 200px;
-        }
-      }
-      .dropdown-box {
-        position: relative;
-        display: inline-block;
-        .caret {
-          position: absolute;
-          top: 50%;
-          left: 70%;
-        }
-        .dropdown-menu li{
-          cursor: pointer;
         }
       }
       .message {
@@ -95,5 +101,7 @@
 }
 .button-container {
   margin-top: 20px;
-  float: right;
+  .button-content {
+    float: right;
+  }
 }

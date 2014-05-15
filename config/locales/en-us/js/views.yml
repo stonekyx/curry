@@ -21,6 +21,7 @@ en-us:
         view_ticket_info: "View %{project_name} Related Tickets"
         view_message_detail: "View Message Details"
         view_project_detail: "View Project Details"
+        fire_ticket: "Fire a Ticket"
       Information:
         sender: "%{name} on %{time} Wrote:"
         receiver: "On %{time} Sent to %{name}:"

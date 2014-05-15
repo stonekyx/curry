@@ -1,0 +1,134 @@
+<div id='ticket-container'>
+  <div class='form-container'>
+    <form method='post' id='ticket-form' accept-charset='UTF-8'>
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='project-name' class='half-width' name='project_name' maxlength='50'>
+          </div>
+          <div class='message'></div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-box'>
+            <div class='dropdown-box'>
+              <input type='hidden' name='genre'>
+              <input type='button' id='genre' class='dropdown-toggle half-width' name='genre' data-toggle='dropdown'>
+              <div class='caret'></div>
+              <ul class='dropdown-menu'>
+                {{#each ticketGenreList}}
+                <li><a>{{.}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          <div class='message'></div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-box'>
+            <div class='dropdown-box'>
+              <input type='hidden' name='priority'>
+              <input type='button' id='priority' class='dropdown-toggle half-width' name='priority' data-toggle='dropdown'>
+              <div class='caret'></div>
+              <ul class='dropdown-menu'>
+                {{#each ticketPriorityList}}
+                <li><a>{{.}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='project-title' class='one-half-width' name='project_title' maxlength='100'>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='reporter' class='half-width' name='reporter' maxlength='50'>
+          </div>
+          <div class='message'></div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='assignee' class='half-width' name='assignee' maxlength='50'>
+          </div>
+          <div class='message'></div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-box'>
+            <input type='text' id='fix-version' class='half-width' name='fix_version' maxlength='50'>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-box'>
+            <textarea type='text' id='description' class='one-half-width' name='description' maxlength='2000'></textarea>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+      <!--
+      <div class='virtual-input-row'>
+        <div class='input-row'>
+          <div class='input-text'>{{I18nt 'Common.Tabs.reporter'}}</div>
+          <div class='input-box'>
+            <input type='text' id='reporter' class='half-width' name='reporter' value='{{reporterName}}' maxlength='50'>
+          </div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-text'>{{I18nt 'Common.Tabs.assignee'}}</div>
+          <div class='input-box'>
+            <input type='text' id='assignee' class='half-width' name='assignee' value='{{assigneeName}}' maxlength='50'>
+            <div class='edit-btn stand-by'></div>
+          </div>
+          <div class='message'></div>
+        </div>
+
+        <div class='input-row'>
+          <div class='input-text'>{{I18nt 'Common.Tabs.fix_version'}}</div>
+          <div class='input-box'>
+            <input type='text' id='fix-version' class='half-width' name='fix_version' value='{{fixVersion}}' maxlength='50'>
+            <div class='edit-btn stand-by'></div>
+          </div>
+          <div class='message'></div>
+        </div>
+      </div>
+
+      <div class='buffer-section'>
+        <div class='instruction-text'>{{I18nt 'Common.Instruction.description'}}</div>
+        <div class='dividing-line'></div>
+      </div>
+
+      <div class='description-section'>
+        <div class='description-content'>
+          <div class='description'>{{description}}</div>
+        </div>
+      </div>
+      -->
+    </form>
+  </div>
+
+  <div class='button-container'>
+    <div class='button-content'>
+      <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
+      <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.submit'}}</div>
+    </div>
+    <div class='clear'></div>
+  </div>
+</div>

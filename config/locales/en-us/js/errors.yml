@@ -20,13 +20,20 @@ en-us:
         project_name:
         -
         - "Please Enter Project Name"
-        description:
+        - "No Such Project"
+        project_title:
         -
-        - "Please Write Down Your Description"
-        comment:
+        - "Please Enter Project Title"
+        genre:
         -
-        - "Please Write Down Your Comment"
-        - "You're Not Required to Leave a Comment"
+        - "Please Select Genre"
+        priority:
+        -
+        - "Please Select Priority"
+        reporter:
+        -
+        - "Please Enter Reporter"
+        - "No Such User"
         assignee:
         -
         - "Please Enter Assignee"
@@ -35,3 +42,10 @@ en-us:
         -
         - "Please Enter Fix Version"
         - "Version Expired or Not Existed"
+        description:
+        -
+        - "Please Write Down Your Description"
+        comment:
+        -
+        - "Please Write Down Your Comment"
+        - "You're Not Required to Leave a Comment"

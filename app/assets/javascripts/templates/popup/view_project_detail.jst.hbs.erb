@@ -22,12 +22,15 @@
   </div>
 
   <div class='button-container'>
-    {{#if manager.is_current_user}}
-    <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
-    <div id='edit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.edit'}}</div>
-    <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.submit'}}</div>
-    {{else}}
-    <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.confirm'}}</div>
-    {{/if}}
+    <div class='button-content'>
+      {{#if manager.is_current_user}}
+      <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
+      <div id='edit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.edit'}}</div>
+      <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.submit'}}</div>
+      {{else}}
+      <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.confirm'}}</div>
+      {{/if}}
+    </div>
+    <div class='clear'></div>
   </div>
 </div>

@@ -29,7 +29,7 @@
         var item = inputs.eq(i);
         var initValue = data[Curry.Utils.Str.camelize(item.attr('name'))] || data[item.attr('name')];
         if (!Curry.Utils.isBlank(initValue)) {
-          var label = form.find('label[for=' + item.attr('name') + ']');
+          var label = form.find('label[for=' + item.attr('id') + ']');
           if (!Curry.Utils.isBlank(label)) label.hide();
           item.val(initValue);
         }

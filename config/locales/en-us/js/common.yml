@@ -58,6 +58,7 @@ en-us:
       Button:
         edit: "Edit"
         add_comment: "Add Comment"
+        fire_ticket: "Fire Ticket"
         cancel: "Cancel"
         confirm: "Confirm"
         save: "Save"

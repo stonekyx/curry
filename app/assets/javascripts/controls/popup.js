@@ -112,6 +112,7 @@
 
     renderInternal: function() {
       this._container.find('#header-container .headline').html(this.title);
+      //TODO: zacky, better to show total number of fired tickets.
       this._container.find('#body-container').html(this.renderTemplate('popup/view_project_detail', this.data));
       this.form = this._container.find('#project-form');
       this.buttons = this._container.find('.button-container');
@@ -167,8 +168,60 @@
     _initElements: function() {}
   });
 
+  Curry.Controls.Popup.FireTicket = Curry.Controls.Popup.extend({
+    events: _.extend({
+      'click #submit-btn': '_onClickSubmit'
+    }, Curry.Controls.Popup.prototype.events),
+
+    _init: function() {
+      this.name = 'fire_ticket_box';
+      this.title = I18n.t('Popup.Title.fire_ticket');
+      this.data['ticketGenreList'] = I18n.t('Common.Dropdown.ticket_genre');
+      this.data['ticketPriorityList'] = I18n.t('Common.Dropdown.ticket_priority');
+      this.data['reporter'] = this.data['assignee'] = Cookies.getCookieByKey('CURRY_UNAME');
+    },
+
+    renderInternal: function() {
+      this._container.find('#header-container .headline').html(this.title);
+      this._container.find('#body-container').html(this.renderTemplate('popup/fire_ticket', this.data));
+      this.form = this._container.find('#ticket-form');
+      this.form.furthestProgress = -1;
+      this.form.fieldsStatus = [];
+    },
+
+    _initElements: function() {
+      Curry.Utils.Form.initInputNames(this.form);
+      Curry.Utils.Form.initInputValues(this.form, this.data);
+    },
+
+    _onClickSubmit: function() {
+      if (!this.formOverallCheck()) return false;
+
+      var self = this;
+      Curry.Helpers.JsonResponser.post({
+        url: Curry.Constants.URL.API.FIRETICKET,
+        data: this.form.serialize()
+      }).done(function(response) {
+        if (response) {
+          if (response['success']) {
+            self._onClickCancel();
+            Curry.navigate('/browse/ticket_id='+response['ticket_id']);
+          } else if (response['fail']) {
+            var errPrompt = response['errors']['message'];
+            var input = self.form.find('input[name='+errPrompt['key']+']');
+            var errMsg = I18n.t('Errors.Inputs.' + errPrompt['key'])[errPrompt['index']];
+            Curry.Utils.Form.setError(input, errMsg);
+          }
+        }
+      }).fail(function(response) {
+        alert('Failed...');
+      });
+    }
+  });
+
   Curry.Utils.ElementManager.registerPopup('login', Curry.Controls.Popup.Login);
   Curry.Utils.ElementManager.registerPopup('view_ticket_info', Curry.Controls.Popup.ViewTicketInfo);
   Curry.Utils.ElementManager.registerPopup('view_project_detail', Curry.Controls.Popup.ViewProjectDetail);
   Curry.Utils.ElementManager.registerPopup('view_message_detail', Curry.Controls.Popup.ViewMessageDetail);
+  Curry.Utils.ElementManager.registerPopup('fire_ticket', Curry.Controls.Popup.FireTicket);
 }).call(this, jQuery);

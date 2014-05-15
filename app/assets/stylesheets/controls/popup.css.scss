@@ -3,9 +3,9 @@
   position: fixed;
   background: $popup-background;
   border-radius: $border-radius;
-  padding: 30px;
 
   #popup-content-container {
+    padding: 30px;
     #header-container {
       padding-bottom: 20px;
       border-bottom: 1px solid $border-color;

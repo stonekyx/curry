@@ -76,10 +76,19 @@
 
     _onClickDropdownList: function(evt) {
       if (evt.target) {
-        var text = evt.target.text;
-        var input = $(evt.target).parents('.dropdown-box').find('input');
-        input.val(text);
-        input.focus();
+        var shadow = $(evt.target).parents('.dropdown-box').find('input[type=hidden]');
+        var input  = $(evt.target).parents('.dropdown-box').find('input[type=button]');
+        var label  = $(evt.target).parents('.dropdown-box').find('label[for=' + input.attr('id') + ']');
+        Curry.Utils.Form.clearError(input);
+        if (!Curry.Utils.isBlank(label)) label.hide();
+        var list = $(evt.target).parents('ul').find('li');
+        var item = $(evt.target).parent()[0];
+        shadow.val(_.indexOf(list, item));
+        input.val(evt.target.text);
+
+        if (!input.hasClass('optional') && !Curry.Utils.isBlank(this.form)) {
+          Curry.Utils.Form.advanceFieldProgress(input[0].name, this.form);
+        }
       }
     },
 

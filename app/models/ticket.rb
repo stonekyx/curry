@@ -43,4 +43,12 @@ class Ticket < Dove::Base
 
     data
   end
+
+  def update_hash_to_save raw_hash
+    hash = raw_hash.dup
+    hash[:created_at] = Time.now
+    hash[:status] = 0
+
+    hash
+  end
 end

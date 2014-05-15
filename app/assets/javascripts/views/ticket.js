@@ -86,7 +86,7 @@
 
     _onClickCheckBtn: function(evt) {
       if (evt.target) {
-        var input = $(evt.target).siblings('input');
+        var input = $(evt.target).siblings('input').not('[type=button]');
         var key = input.attr('name');
         var inputVal = Curry.Utils.Str.trim(input.val());
         Curry.Utils.Form.clearError($(input));
@@ -96,15 +96,15 @@
           Curry.Utils.Form.setError($(input), errMsg);
         } else if (inputVal != this.ticket.bufferVal) {
           var data = {};
-          switch ($(evt.target).siblings('input').attr('id')) {
+          switch ($(evt.target).siblings('input').not('[type=hidden]').attr('id')) {
             case 'priority':
-              data['priority'] = _.indexOf(this.ticket.priorityList, inputVal);
+              data['priority'] = inputVal;
               break;
             case 'status':
-              data['status'] = _.indexOf(this.ticket.statusList, inputVal);
+              data['status'] = inputVal;
               break;
             case 'assignee':
-              data['assignee_name'] = inputVal;
+              data['assignee'] = inputVal;
               break;
             case 'fix-version':
               data['pid'] = this.ticket.projectId;

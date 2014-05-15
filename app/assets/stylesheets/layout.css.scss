@@ -54,6 +54,9 @@ body {
         opacity: $show-opacity;
       }
     }
+    .clear {
+      clear: both;
+    }
     .blue-link {
       color: $link-blue;
       cursor: pointer;

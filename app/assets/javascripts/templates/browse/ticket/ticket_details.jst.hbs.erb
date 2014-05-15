@@ -38,6 +38,7 @@
             <div class='input-text'>{{I18nt 'Common.Tabs.priority'}}</div>
             <div class='input-box'>
               <div class='dropdown-box'>
+                <input type='hidden' name='priority'>
                 <input type='button' id='priority' class='dropdown-toggle half-width' name='priority' data-toggle='dropdown' value='{{priorityText}}'>
                 <div class='edit-btn stand-by'></div>
                 <div class='caret'></div>
@@ -54,6 +55,7 @@
             <div class='input-text'>{{I18nt 'Common.Tabs.status'}}</div>
             <div class='input-box'>
               <div class='dropdown-box'>
+                <input type='hidden' name='status'>
                 <input type='button' id='status' class='dropdown-toggle half-width' name='status' data-toggle='dropdown' value='{{statusText}}'>
                 <div class='edit-btn stand-by'></div>
                 <div class='caret'></div>
@@ -136,9 +138,12 @@
         </div>
 
         <div class='button-container'>
-          <div id='edit-btn' class='btn btn-large btn-inverse'>{{I18nt 'Common.Button.add_comment'}}</div>
-          <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
-          <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.save'}}</div>
+          <div class='button-content'>
+            <div id='edit-btn' class='btn btn-large btn-inverse'>{{I18nt 'Common.Button.add_comment'}}</div>
+            <div id='cancel-btn' class='btn btn-large'>{{I18nt 'Common.Button.cancel'}}</div>
+            <div id='submit-btn' class='btn btn-large btn-primary'>{{I18nt 'Common.Button.save'}}</div>
+          </div>
+          <div class='clear'></div>
         </div>
       </div>
     </form>

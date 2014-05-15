@@ -6,6 +6,7 @@
     name: 'dashboard',
 
     events: _.extend({
+      'click .btn.fire-ticket': '_onClickFireTicket',
       'click .content-row .name': '_onClickItem',
       'click .content-row .view-details': '_onClickViewDetails'
     }, Curry.Views.BaseView.prototype.events),
@@ -68,6 +69,10 @@
       }).fail(function(response) {
         alert('Failed...');
       });
-    }
+    },
+
+    _onClickFireTicket: function() {
+      Curry.Utils.ElementManager.showPopup('fire_ticket', {});
+    },
   });
 }).call(this, jQuery);

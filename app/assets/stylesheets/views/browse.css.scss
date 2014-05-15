@@ -6,121 +6,131 @@
   text-align: center;
   .dashboard-content {
     display: inline-block;
+    .project-browser {
+      padding-top: 20px;
+    }
   }
 }
 
-#ticket-container {
-  padding: 30px;
-  .ticket-content {
-    .left-container {
-      display: inline-block;
-    }
-    .right-container {}
+#content-container {
+  #ticket-container {
+    padding: 30px;
+    .ticket-content {
+      .left-container {
+        display: inline-block;
+      }
+      .right-container {}
 
-    .ticket-browser {
-      .ticket-detials {
-        .buffer-section {
-          padding: 40px 20px;
-          .instruction-text {
-            font-size: $large-font-size;
+      .ticket-browser {
+        .ticket-detials {
+          .buffer-section {
+            padding: 40px 20px;
+            .instruction-text {
+              font-size: $large-font-size;
+            }
+            .dividing-line {
+              background-color: $border-color;
+              height: 5px;
+            }
           }
-          .dividing-line {
-            background-color: $border-color;
-            height: 5px;
+          [class$='-section'] {
+            max-width: 850px;
           }
-        }
-        [class$='-section'] {
-          max-width: 850px;
-        }
-        .header-section {
-          .headline {
-            font-size: $large-font-size;
-            font-weight: bold;
-          }
-          div[class^='ticket-'] {
-            display: inline-block;
-            vertical-align: middle;
-          }
-          .ticket-genre .genre-text {
-            margin-top: 10px;
-          }
-          .ticket-name, .ticket-title {
-            margin-left: 20px;
-          }
-          .ticket-title {
-            max-width: 500px;
-            word-wrap: break-word;
-          }
-        }
-        .description-section {
-          .description {
-            font-size: $medium-font-size;
-            padding: 10px;
-          }
-        }
-        .comment-section {
-          .section-container {
-            .comment-item {
-              .publisher-avatar {
-                float: left;
-                border-radius: $border-radius;
+          .header-section {
+            .headline {
+              font-size: $large-font-size;
+              font-weight: bold;
+            }
+            div[class^='ticket-'] {
+              display: inline-block;
+              vertical-align: middle;
+            }
+            .ticket-genre {
+              div[class$='-icon'] {
+                margin: auto;
               }
-              .comment-content {
-                position: relative;
-                width: 700px;
-                margin-left: 70px;
-                border: 1px solid $grey-d;
-                border-radius: $border-radius;
-                [class^='quote-'] {
-                  position: absolute;
-                  border-style: solid;
-                  border-color: transparent;
-                  left: -16px;
-                  top: 8px;
+              .genre-text {
+                margin-top: 10px;
+              }
+            }
+            .ticket-name, .ticket-title {
+              margin-left: 20px;
+            }
+            .ticket-title {
+              max-width: 500px;
+              word-wrap: break-word;
+            }
+          }
+          .description-section {
+            .description {
+              font-size: $medium-font-size;
+              padding: 10px;
+            }
+          }
+          .comment-section {
+            .section-container {
+              .comment-item {
+                .publisher-avatar {
+                  float: left;
+                  border-radius: $border-radius;
                 }
-                .quote-shadow {
-                  border-width: 8px;
-                  border-right-color: $grey-d;
+                .comment-content {
+                  position: relative;
+                  width: 700px;
+                  margin-left: 70px;
+                  border: 1px solid $grey-d;
+                  border-radius: $border-radius;
+                  [class^='quote-'] {
+                    position: absolute;
+                    border-style: solid;
+                    border-color: transparent;
+                    left: -16px;
+                    top: 8px;
+                  }
+                  .quote-shadow {
+                    border-width: 8px;
+                    border-right-color: $grey-d;
+                  }
+                  .quote-facade {
+                    border-width: 7px;
+                    border-right-color: $grey-e;
+                    margin: 1px 0 0 2px;
+                  }
+                  .header {
+                    background-color: $grey-e;
+                    padding: 10px;
+                  }
                 }
-                .quote-facade {
-                  border-width: 7px;
-                  border-right-color: $grey-e;
-                  margin: 1px 0 0 2px;
-                }
-                .header {
-                  background-color: $grey-e;
-                  padding: 10px;
+              }
+              .comment-bucket {
+                display: block;
+                padding: 30px;
+                text-align: center;
+                .comment-area {
+                  resize: none;
+                  width: 500px;
+                  height: 150px;
                 }
               }
             }
-            .comment-bucket {
-              display: block;
-              padding: 30px;
-              text-align: center;
-              .comment-area {
-                resize: none;
-                width: 500px;
-                height: 150px;
-              }
-            }
           }
         }
-      }
-      .task-icon {
-        @include icon-sprite('task');
-      }
-      .bug-icon {
-        @include icon-sprite('bug');
-      }
-      .improvement-icon {
-        @include icon-sprite('improvement');
-      }
-      .investigation-icon {
-        @include icon-sprite('investigation');
-      }
-      .publisher-avatar {
-        &.default {
-          @include mark-sprite('default-avatar');
+        .task-icon {
+          @include icon-sprite('task');
+        }
+        .bug-icon {
+          @include icon-sprite('bug');
+        }
+        .improvement-icon {
+          @include icon-sprite('improvement');
+        }
+        .investigation-icon {
+          @include icon-sprite('investigation');
+        }
+        .publisher-avatar {
+          &.default {
+            @include mark-sprite('default-avatar');
+          }
         }
       }
     }

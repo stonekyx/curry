@@ -10,8 +10,10 @@ Table 1: users
 
 Table 2: projects
   id          ==> project id
-  mid         ==> manager id
   name        ==> project name
+  abbr        ==> abbreviation of project name as prefix of ticket name
+  cnt         ==> total ticket number of the project
+  mid         ==> manager id
   created_at  ==> time project created
   description ==> description of project
 
